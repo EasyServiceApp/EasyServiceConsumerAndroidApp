@@ -26,6 +26,7 @@ public class IssuesDiagnosedActivity extends AppCompatActivity implements View.O
     Gson gson = new Gson();
     String[] issuesList;
     String deviceStr,issues;
+    //no change
     ImageView ivToolbarHome;
     private Toolbar toolbar;
 
