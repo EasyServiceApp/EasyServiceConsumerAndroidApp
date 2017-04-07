@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.service.easyservice">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+
+    <permission
+        android:name="com.service.easyservice.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.service.easyservice.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <uses-feature android:name="android.hardware.camera.flash" />
+
+    <!--
+    <permission
+        android:name="com.qutrust.truevalue.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.qutrust.truevalue.permission.C2D_MESSAGE" />
+    -->
+    <!-- gcm end -->
+
+
+    <!-- For Ultraviolet index -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.samsung.permission.SSENSOR" />
+    <uses-permission android:name="com.samsung.permission.android.permission.BODY_SENSORS" />
+
+    <!-- For HRM raw data -->
+    <uses-permission android:name="com.samsung.permission.SSENSOR_HRM_RAW_PPG" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+
+    <!-- For call handling data -->
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.USB_PERMISSION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.TRANSMIT_IR" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- <uses-feature android:name="android.hardware.camera.autofocus"/> -->
+    <uses-feature android:name="android.hardware.camera2.full" />
+    <!-- <uses-feature -->
+    <!-- android:name="android.hardware.camera" -->
+    <!-- android:required="false" /> -->
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name_display"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Landing"
+            android:label="@string/title_activity_landing"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".DiagnoseActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".AddDeviceActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".CategoryBrandActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.sdk.sampleapp.LaunchActivity"
+            android:label="@string/title_activity_login_main"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransActionBarTheme" />
+        <activity
+            android:name="com.sdk.sampleapp.MainActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransActionBarTheme"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name="com.sdk.sampleapp.TestActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransActionBarTheme"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <!--
+        <activity
+            android:name="com.hw.tests.StylusTest"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.hw.main.PersonalInfoFrom"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"></activity>
+        -->
+        <!-- <activity -->
+        <!-- android:name="com.hw.main.OptionalTests" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@style/TransActionBarTheme"></activity> -->
+        <activity
+            android:name="com.sdk.sampleapp.CertificateViewActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransActionBarTheme"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name="com.mlapps.truevaluesdk.Options"
+            android:label="Options" />
+        <activity
+            android:name="com.mlapps.truevaluesdk.S_PenHoveringActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.mlapps.truevaluesdk.ScreenTest"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+
+        <intent-filter>
+            <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+        </intent-filter>
+
+        <meta-data
+            android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+            android:resource="@xml/device_filter" />
+
+        <service android:name="com.mlapps.truevaluesdk.HomeService" />
+        <service android:name="com.mlapps.truevaluesdk.EarpieceService" />
+        <service android:name="com.mlapps.truevaluesdk.ProximityService" />
+
+        <!-- <activity android:name="net.hockeyapp.android.UpdateActivity" /> -->
+
+        <receiver
+            android:name="com.mlapps.truevaluesdk.InstallReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Required Meta-Data keys for SemusiSDK -->
+        <meta-data
+            android:name="com.semusi.analytics.appid"
+            android:value="55af842d00bf4f78080002eb" />
+        <meta-data
+            android:name="com.semusi.analytics.appkey"
+            android:value="8753df987aa4e484abade8f59383c9a0db3fe011" />
+        <meta-data
+            android:name="com.semusi.analytics.apikey"
+            android:value="4c78a8e3184f6e6fdaeddb4501ac3c92" />
+        <!-- End of required meta-data -->
+
+
+        <!-- Semusi setup start -->
+        <!--
+         <receiver
+             android:name="com.google.android.gms.gcm.GcmReceiver"
+             android:exported="true"
+             android:permission="com.google.android.c2dm.permission.SEND">
+             <intent-filter>
+                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                 <category android:name="com.semusi.PlacesModule2Test" />
+             </intent-filter>
+         </receiver>
+        -->
+
+        <receiver android:name="com.mlapps.truevaluesdk.USBReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <action android:name="android.intent.action.ACTION_UMS_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_UMS_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <!--
+        <receiver
+            android:name="semusi.analytics.handler.InstallReferralHandler"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        -->
+        <!-- Semusi setup end -->
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="e97d2bc373f2b7f60d906921d6e4163a36f423c7" />
+
+        <activity
+            android:name=".MyDevicesActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ServiceRequestActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".IssuesDiagnosedActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ViewDeviceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ImageZoomActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ServiceAddressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDvG8QiGGhPup9y2NkaccY4eM9S5jQary8" />
+
+        <activity android:name=".MyRequestDetailsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".MembershipDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".ManageAddressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".AddressMapActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".ServiceDropOffAddressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+    </application>
+
+</manifest>

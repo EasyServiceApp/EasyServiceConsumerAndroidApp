@@ -1,0 +1,64 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!-- set height and widths controls 20+ -->
+    <dimen name="toolbar_height">70dp</dimen>
+    <dimen name="header_height">70dp</dimen>
+    <dimen name="footer_height">70dp</dimen>
+    <dimen name="text_12px">17sp</dimen>
+    <dimen name="text_11px">16sp</dimen>
+    <dimen name="text_13px">18sp</dimen>
+    <dimen name="text_14px">20sp</dimen>
+    <dimen name="text_16px">22sp</dimen>
+    <dimen name="text_18px">20sp</dimen>
+    <dimen name="text_19px">21sp</dimen>
+    <dimen name="text_20px">22sp</dimen>
+    <dimen name="text_22px">24sp</dimen>
+    <dimen name="text_24px">26sp</dimen>
+    <dimen name="text_15px">21sp</dimen>
+    <dimen name="text_search_title">22sp</dimen>
+
+
+    <dimen name="edit_text_padding">20dp</dimen>
+
+    <!-- set common margins x2 -->
+    <dimen name="margin_5">10dp</dimen>
+    <dimen name="margin_10">20dp</dimen>
+    <dimen name="margin_12">24dp</dimen>
+    <dimen name="margin_15">30dp</dimen>
+    <dimen name="margin_17">34dp</dimen>
+    <dimen name="margin_20">40dp</dimen>
+    <dimen name="margin_25">50dp</dimen>
+    <dimen name="margin_30">60dp</dimen>
+    <dimen name="margin_35">70dp</dimen>
+    <dimen name="margin_38">76dp</dimen>
+    <dimen name="margin_40">80dp</dimen>
+    <dimen name="margin_45">90dp</dimen>
+    <dimen name="margin_50">100dp</dimen>
+    <dimen name="margin_60">120dp</dimen>
+    <dimen name="margin_70">140dp</dimen>
+    <dimen name="margin_80">160dp</dimen>
+    <dimen name="margin_90">180dp</dimen>
+    <dimen name="margin_100">200dp</dimen>
+
+    <dimen name="margin_1">1dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="margin_3">3dp</dimen>
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_7">7dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_9">9dp</dimen>
+    <dimen name="margin_36">36dp</dimen>
+    <dimen name="margin_77">77dp</dimen>
+    <dimen name="margin_95">95dp</dimen>
+    <dimen name="margin_120">120dp</dimen>
+    <dimen name="margin_130">130dp</dimen>
+    <dimen name="margin_150">150dp</dimen>
+    <dimen name="margin_180">200dp</dimen>
+    <dimen name="margin_250">280dp</dimen>
+
+
+</resources>

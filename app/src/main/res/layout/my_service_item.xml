@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/category_filled_circle"
+        android:padding="@dimen/margin_10"
+        android:src="@drawable/ic_my_devices_mobile" />
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ivCategory"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_10"
+        android:ems="4"
+        android:text="GT 530"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:textSize="@dimen/text_13px" />
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvModel"
+        android:layout_toRightOf="@+id/ivCategory"
+        android:layout_centerHorizontal="true"
+        android:ems="5"
+        android:text="SAMSUNG"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:textSize="@dimen/text_13px" />
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvBookingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:ems="5"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_10"
+        android:text="Booking Date \n 28-03-2017"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:textSize="@dimen/text_13px" />
+
+
+</RelativeLayout>

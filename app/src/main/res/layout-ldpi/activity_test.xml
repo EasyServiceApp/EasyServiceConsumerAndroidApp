@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/App_background"
+    android:orientation="vertical"
+    tools:context="com.sdk.sampleapp.TestActivity">
+
+    <TextView
+        android:id="@+id/scanningHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="Scanning Proximity"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/centerImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scanningHeader"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/bluetooth" />
+
+    <com.sdk.sampleapp.AnimatedGifImageView
+        android:id="@+id/gif1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+    <ImageView
+        android:id="@+id/capimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/centerImage"
+        android:layout_marginTop="29dp"
+        android:layout_marginLeft="60dp"
+        android:visibility="gone"
+        android:src="@drawable/capturingphoto" />
+    <ImageView
+        android:id="@+id/recimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/centerImage"
+        android:layout_marginTop="29dp"
+        android:layout_marginLeft="60dp"
+        android:visibility="gone"
+        android:src="@drawable/displayingphoto" />
+    <ImageView
+        android:id="@+id/capvideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/centerImage"
+        android:layout_marginTop="29dp"
+        android:layout_marginLeft="60dp"
+        android:visibility="gone"
+        android:src="@drawable/recordingvideo" />
+    <ImageView
+        android:id="@+id/recvideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/centerImage"
+        android:layout_marginTop="29dp"
+        android:layout_marginLeft="60dp"
+        android:visibility="gone"
+        android:src="@drawable/playingvideo" />
+
+
+    <TextView
+        android:id="@+id/extratext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/centerImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="24dp"
+        android:text=""
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/scanningScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/counterText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:text="11/40"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/counterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/extratext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="10"
+        android:textColor="@android:color/white"
+        android:textSize="40dp" />
+
+    <WebView
+        android:id="@+id/webViewInternet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/centerImage"
+        android:layout_alignEnd="@+id/scanningHeader"
+        android:layout_alignLeft="@+id/scanningHeader"
+        android:layout_alignRight="@+id/scanningHeader"
+        android:layout_alignStart="@+id/scanningHeader"
+        android:layout_alignTop="@+id/scanningHeader"
+        android:layout_marginTop="20dp" />
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/scanningHeader"
+        android:layout_marginTop="20dp" />
+
+    <!--<SurfaceView
+        android:id="@+id/surfaceViewvideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/centerImage"
+        android:layout_alignEnd="@+id/scanningHeader"
+        android:layout_alignLeft="@+id/scanningHeader"
+        android:layout_alignRight="@+id/scanningHeader"
+        android:layout_alignStart="@+id/scanningHeader"
+        android:layout_alignTop="@+id/scanningHeader"
+        android:layout_marginTop="80dp" />-->
+    <!--<SurfaceView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="80dp"-->
+    <!--android:id="@+id/surfaceViewvideofront"-->
+    <!--android:layout_alignTop="@+id/scanningHeader"-->
+    <!--android:layout_alignLeft="@+id/scanningHeader"-->
+    <!--android:layout_alignStart="@+id/scanningHeader"-->
+    <!--android:layout_alignBottom="@+id/centerImage"-->
+    <!--android:layout_alignRight="@+id/scanningHeader"-->
+    <!--android:layout_alignEnd="@+id/scanningHeader" />-->
+    <!--<TextureView-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:id="@+id/TextureView"-->
+    <!--android:layout_alignTop="@+id/scanningHeader"-->
+    <!--android:layout_alignLeft="@+id/scanningHeader"-->
+    <!--android:layout_alignStart="@+id/scanningHeader"-->
+    <!--android:layout_alignBottom="@+id/centerImage"-->
+    <!--android:layout_alignRight="@+id/scanningHeader"-->
+    <!--android:layout_alignEnd="@+id/scanningHeader" />-->
+
+    <LinearLayout
+        android:id="@+id/camera_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_above="@+id/extratext"
+        android:layout_alignEnd="@+id/scanningHeader"
+        android:layout_alignLeft="@+id/scanningHeader"
+        android:layout_alignRight="@+id/scanningHeader"
+        android:layout_alignStart="@+id/scanningHeader"
+        android:layout_alignTop="@+id/scanningHeader"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/cameraframelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/scanningHeader"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/transparent"
+            android:visibility="visible"></FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

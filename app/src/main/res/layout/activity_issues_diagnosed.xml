@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    tools:context="com.service.easyservice.AddDeviceActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"></include>
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="SERVICE REQUEST"
+        android:layout_below="@+id/tool_bar"
+        android:textColor="@color/header_text_color"
+        android:textSize="@dimen/text_25px" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvHeader"
+        android:layout_above="@+id/tvFooter">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/llHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/ivCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:background="@drawable/category_filled_circle"
+                    android:padding="@dimen/margin_10"
+                    android:src="@drawable/ic_my_devices_mobile" />
+
+                <com.service.easyservice.widgets.TextViewOpenSansRegular
+                    android:id="@+id/tvBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:ellipsize="end"
+                    android:text="SAMSUNG\nS3601"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_12px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llHeader"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <com.service.easyservice.widgets.TextViewOpenSansBold
+                    android:id="@+id/tvSelectIssueLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/margin_20"
+                    android:paddingStart="@dimen/margin_20"
+                    android:text="Issues Diagnosed-"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18px" />
+
+                <LinearLayout
+                    android:id="@+id/llIssueList"
+                    android:layout_width="match_parent"
+                    android:paddingLeft="@dimen/margin_20"
+                    android:paddingStart="@dimen/margin_20"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+                <com.service.easyservice.widgets.TextViewOpenSansBold
+                    android:id="@+id/tvDiagnoseLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_20"
+                    android:paddingStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_30"
+                    android:text="Choose your service mode."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvLocationLabel"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_30"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvPickUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_3"
+                    android:layout_weight="1"
+                    android:background="@color/button_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5"
+                    android:text="Pick Up"
+
+                    android:textColor="@color/button_text" />
+
+                <TextView
+                    android:id="@+id/tvDropOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_3"
+                    android:layout_weight="1"
+                    android:background="@color/button_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5"
+                    android:text="Drop Off"
+                    android:clickable="false"
+                    android:textColor="@color/button_text" />
+
+                <TextView
+                    android:id="@+id/tvAtHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_3"
+                    android:layout_weight="1"
+                    android:background="@color/button_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5"
+                    android:text="At Home"
+
+                    android:textColor="@color/button_text" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+</RelativeLayout>

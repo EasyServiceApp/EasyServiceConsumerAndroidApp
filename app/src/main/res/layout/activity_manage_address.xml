@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_category_brand"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.service.easyservice.CategoryBrandActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"></include>
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_bar"
+        android:background="@drawable/header"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="Addresses"
+        android:textColor="@color/header_text_color"
+        android:textSize="@dimen/text_25px" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvFooter"
+        android:layout_below="@id/tvHeader">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvHomeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:text="Home:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <EditText
+                android:id="@+id/etHomeAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvHomeLabel"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_toLeftOf="@+id/ivHomeLocation"
+                android:background="@drawable/rectangle_border"
+                android:gravity="start"
+                android:hint="Enter Home Address"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:minLines="3"
+                android:padding="@dimen/margin_5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <ImageView
+                android:id="@+id/ivHomeLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvHomeLabel"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_location" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvWorkLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etHomeAddress"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:text="Work:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <EditText
+                android:id="@+id/etWorkAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvWorkLabel"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_toLeftOf="@+id/ivHomeLocation"
+                android:background="@drawable/rectangle_border"
+                android:gravity="start"
+                android:hint="Enter Home Address"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:minLines="3"
+                android:padding="@dimen/margin_5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <ImageView
+                android:id="@+id/ivWorkLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvWorkLabel"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_location" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvOtherLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etWorkAddress"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:text="Other:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <EditText
+                android:id="@+id/etOtherAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvOtherLabel"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_toLeftOf="@+id/ivOtherLocation"
+                android:background="@drawable/rectangle_border"
+                android:gravity="start"
+                android:hint="Enter Home Address"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:minLines="3"
+                android:padding="@dimen/margin_5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <ImageView
+                android:id="@+id/ivOtherLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvOtherLabel"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_location" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text="Update Addresses"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+
+</RelativeLayout>

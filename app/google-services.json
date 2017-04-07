@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "772989146877",
+    "project_id": "easy-service-a9e89"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772989146877:android:cbde09d62e6fee4a",
+        "android_client_info": {
+          "package_name": "com.service.easyservice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772989146877-2k8vlqpveqgj8jk8urt2hilgrene4qr2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.service.easyservice",
+            "certificate_hash": "456AE95B2E2EB07A14431E4AF1E07BF4A08E032F"
+          }
+        },
+        {
+          "client_id": "772989146877-kcb6gbgue853f2bive2tkb56t21rk3qa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3Z760zLXm9T6XY-h45ftWqxpyySr8IPA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

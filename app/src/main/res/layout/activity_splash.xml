@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splashscreen_bg"
+    android:theme="@style/Theme.AppCompat"
+
+    >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/splashscreen_icon" />
+
+    <TextView
+        android:id="@+id/textview_SplashActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="16dp"
+        android:text="EasyService"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px"
+        android:textStyle="bold"
+        android:visibility="visible" />
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:text="True Value Demo"-->
+    <!--android:textStyle="italic"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:drawablePadding="16dp"-->
+    <!--android:textSize="30sp"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:id="@+id/textview_SplashActivity"-->
+    <!--android:textAllCaps="true"/>-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <!-- -->
+    <!--android:textSize="40dp"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginTop="200dp" />-->
+</RelativeLayout>

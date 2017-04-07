@@ -1,0 +1,322 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    tools:context="com.service.easyservice.AddDeviceActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"></include>
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_bar"
+        android:background="@drawable/header"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="MY DEVICES"
+        android:textColor="@color/header_text_color"
+        android:textSize="@dimen/text_25px" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvFooter"
+        android:layout_below="@+id/tvHeader">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/llHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/ivCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:background="@drawable/category_filled_circle"
+                    android:padding="@dimen/margin_10"
+                    android:src="@drawable/ic_my_devices_mobile" />
+
+                <com.service.easyservice.widgets.TextViewOpenSansRegular
+                    android:id="@+id/tvBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:ellipsize="end"
+                    android:text="SAMSUNG\nS3601"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_12px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llHeader"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <com.service.easyservice.widgets.TextViewOpenSansSemiBold
+                        android:id="@+id/tvName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:ems="8"
+                        android:text="Device Name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_12px"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:layout_toRightOf="@+id/tvName"
+                        android:background="@drawable/horizontal_selector_black"
+                        android:inputType="textPersonName"
+                        android:padding="@dimen/margin_5"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_12px"
+
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <com.service.easyservice.widgets.TextViewOpenSansSemiBold
+                        android:id="@+id/tvWarranty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:ems="8"
+                        android:text="Device in Warranty"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_12px" />
+
+
+
+                    <RadioGroup
+                        android:id="@+id/rgWarranty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_toRightOf="@+id/tvWarranty"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true"
+                         >
+
+                        <RadioButton
+                            android:id="@+id/radio0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Yes"
+                            android:checked="true"/>
+
+                        <RadioButton
+                            android:id="@+id/radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No" />
+
+
+                    </RadioGroup>
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <com.service.easyservice.widgets.TextViewOpenSansSemiBold
+                        android:id="@+id/tvIMEI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:ems="8"
+                        android:text="IMEI Number"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_12px" />
+
+                    <EditText
+                        android:id="@+id/etIMEI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:layout_toRightOf="@+id/tvIMEI"
+                        android:background="@drawable/horizontal_selector_black"
+                        android:inputType="textPersonName"
+                        android:padding="@dimen/margin_5"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_12px" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <com.service.easyservice.widgets.TextViewOpenSansSemiBold
+                        android:id="@+id/tvPurchaseDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:ems="8"
+                        android:text="Purchase Date"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_12px" />
+
+                    <EditText
+                        android:id="@+id/etPurchaseDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:layout_toRightOf="@+id/tvPurchaseDate"
+                        android:background="@drawable/horizontal_selector_black"
+                        android:focusable="false"
+                        android:inputType="textPersonName"
+                        android:padding="@dimen/margin_5"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_12px" />
+
+
+                </RelativeLayout>
+                <com.service.easyservice.widgets.TextViewOpenSansSemiBold
+                    android:id="@+id/tvInvoiceImageLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:ems="8"
+                    android:text="Upload Invoice"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_12px" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivInvoiceImage1"
+                        android:layout_width="@dimen/image_size_width"
+                        android:layout_height="@dimen/image_size_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/add_image" />
+
+                    <ImageView
+                        android:id="@+id/deleteFirstInvoiceImage"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignRight="@id/ivInvoiceImage1"
+                        android:src="@drawable/delete_image"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/ivInvoiceImage2"
+                        android:layout_width="@dimen/image_size_width"
+                        android:layout_height="@dimen/image_size_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/ivInvoiceImage1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/add_image" />
+
+                    <ImageView
+                        android:id="@+id/deleteSecondInvoiceImage"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignRight="@id/ivInvoiceImage2"
+                        android:src="@drawable/delete_image"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/ivInvoiceImage3"
+                        android:layout_width="@dimen/image_size_width"
+                        android:layout_height="@dimen/image_size_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/ivInvoiceImage2"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/add_image"
+                        android:visibility="visible" />
+
+
+                    <ImageView
+                        android:id="@+id/deleteThirdInvoiceImage"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignRight="@id/ivInvoiceImage3"
+                        android:src="@drawable/delete_image"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text="ADD DEVICE"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+</RelativeLayout>

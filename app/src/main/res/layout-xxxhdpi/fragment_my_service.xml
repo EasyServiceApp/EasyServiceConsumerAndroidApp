@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    android:orientation="vertical">
+
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/header"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="SERVICE HISTORY"
+        android:textColor="@color/header_text_color"
+        android:textSize="@dimen/text_25px" />
+
+    <ListView
+        android:id="@+id/lvMyService"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvFooter"
+        android:layout_below="@+id/tvHeader">
+        </ListView>
+
+
+
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+
+</RelativeLayout>

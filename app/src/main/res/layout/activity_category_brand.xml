@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_category_brand"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.service.easyservice.CategoryBrandActivity">
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"></include>
+
+    <com.service.easyservice.widgets.TextViewOpenSansBold
+        android:id="@+id/tvLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="Select Category"
+        android:layout_below="@+id/tool_bar"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_18px" />
+
+    <ListView
+        android:id="@+id/lvCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_below="@+id/tvLabel"
+        android:layout_above="@+id/tvFooter"
+        android:scrollbars="none"
+        ></ListView>
+    <ListView
+        android:id="@+id/lvBrand"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_below="@+id/tvLabel"
+        android:layout_above="@+id/tvFooter"
+        android:scrollbars="none"
+        android:visibility="gone"
+        ></ListView>
+    <ListView
+        android:id="@+id/lvModel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_below="@+id/tvLabel"
+        android:layout_above="@+id/tvFooter"
+        android:scrollbars="none"
+        android:visibility="gone"
+        ></ListView>
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text="Next -->"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+
+</RelativeLayout>

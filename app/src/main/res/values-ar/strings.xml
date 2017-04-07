@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EasyService</string>
+    <string name="hello_world">مرحبا بالعالم!</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="title_activity_login_main">الدخول في</string>
+    <string name="title_activity_login">الدخول في</string>
+
+    <!-- Login Screen -->
+    <string name="username">اسم مستخدم</string>
+    <string name="password">كلمة المرور</string>
+
+    <!-- Register Screen -->
+    <string name="name">اسم</string>
+    <string name="phone">هاتف</string>
+    <string name="email">بريد الكتروني</string>
+    <string name="address_line1">العنوان السطر الأول</string>
+    <string name="city">المدينة</string>
+    <string name="pin">الرمز البريدي</string>
+    <string name="makani">MAKANI Number</string>
+    <string name="language">اللغة</string>
+    <string name="address_line2">العنوان السطر الثاني</string>
+    <string name="title_activity_register">التسجيل</string>
+    <string name="title_activity_landing">Landing</string>
+    <string name="title_section1">القسم 1</string>
+    <string name="title_section2">القسم 2</string>
+    <string name="title_section3">القسم 3</string>
+    <string name="navigation_drawer_open">فتح درج الملاحة</string>
+    <string name="navigation_drawer_close">انهيار درج الملاحة</string>
+    <string name="action_example">مثال عمل</string>
+
+    <string-array name="language">
+        <item>الرجاء اختيار اللغة</item>
+        <item>en</item>
+        <item>ar</item>
+    </string-array>
+
+    <!-- Landing screen strings -->
+
+    <string name="openDrawer">فتح درج</string>
+    <string name="closeDrawer">انهيار درج</string>
+
+    <!-- My Appliance -->
+    <string name="my_appliance">أجهزتي</string>
+    <string name="book_service">حجز خدمة</string>
+    <string name="delete">حذف</string>
+    <string name="edit">التعديل</string>
+    <string name="info">معلومات</string>
+    <string name="add_new_appliances">اضافة جهاز جديد</string>
+    <string name="title_activity_add_appliance">اضافة جهاز جديد</string>
+
+    <string-array name="brand">
+        <item>اختيار الماركة</item>
+        <item>LG</item>
+        <item>Samsung</item>
+        <item>Akai</item>
+        <item>Sony</item>
+    </string-array>
+    <string-array name="model">
+        <item>حدد نموذج</item>
+        <item>S 1</item>
+        <item>S 2</item>
+        <item>S 3</item>
+        <item>S 3</item>
+    </string-array>
+    <string-array name="store">
+        <item>حدد تخزين</item>
+        <item>Vijay Sales</item>
+        <item>Reliance Digital</item>
+        <item>Chroma</item>
+    </string-array>
+    <string-array name="warranty">
+        <item>No Warranty</item>
+        <item>6 اشهر</item>
+        <item>1 سنة</item>
+        <item>2 السنة</item>
+    </string-array>
+    <string-array name="category">
+        <item>اختيار الفئة</item>
+        <item>ثلاجة</item>
+        <item>غسالة</item>
+        <item>مكيف هواء</item>
+        <item>مبردات الهواء</item>
+    </string-array>
+    <string-array name="issue">
+        <item>اختار القضية</item>
+        <item>الغذاء ليس التبريد</item>
+        <item>ثلاجة الضوء لا يعمل</item>
+    </string-array>
+
+    <!-- Diagnose -->
+
+    <string name="request_service">طلب خدمة</string>
+
+    <!-- Thank you -->
+    <string name="request_placed">طلب وضعها</string>
+    <string name="thank_you">نشكركم! .... تم تثبيت طلبكم بنجاح وتم ارسال البيانات إلى بريدكم الإلكتروني وفي رسالة قصيرة إلى رقم الجوال الخاص بكم</string>
+    <string name="title_activity_initial_diagnosis">طلب الخدمة</string>
+    <string name="title_activity_request_history_detail">طلب</string>
+
+    <!-- My Requests -->
+    <string name="my_requests">طلباتي</string>
+    <string name="view_details">عرض التفاصيل</string>
+
+    <!-- Request Details -->
+
+    <string name="request_date">تاريخ الطلب : </string>
+    <string name="request_time">وقت الطلب : </string>
+    <string name="request_location">موقع الطلب : </string>
+    <string name="issue">القضية : </string>
+    <string name="issue_category">قضية الفئة : </string>
+    <string name="remark">Remark : </string>
+    <string name="feedback">التغذية الاسترجاعية : </string>
+    <string name="title_activity_appliance_info">معلومات الجهاز</string>
+    <string name="title_activity_edit_appliance">تحرير الأجهزة</string>
+
+    <!--fb id -->
+    <string name="facebook_app_id">1560453810929318</string>
+
+    <string name="brand">الماركة</string>
+    <string name="model">الموديل</string>
+    <string name="serial_no">الرقم السلسلي</string>
+    <string name="store">تخزين</string>
+    <string name="date_of_purchase">تاريخ الشراء</string>
+    <string name="warranty_period">فترة ضمان</string>
+    <string name="invoice_image">صورة الفاتورة</string>
+    <string name="follow_steps">اتبع الخطوة هو مبين أدناه و معرفة ما اذا كان قد تم حل المشكلة</string>
+    <string name="issue_still_exists">إذا كانت المشكلة لا تزال موجودة ثم انقر على طلب كتاب لطلب الخدمة</string>
+    <string name="book_request">طلب كتاب</string>
+    <string name="add">الإضافة</string>
+    <string name="update">تحديث</string>
+    <string name="select_the_issue">اختيار الموضوع :</string>
+    <string name="image_to_show">اضافة صورة لعرض موضوع (اختياري):</string>
+    <string name="enter_remarks">برجاء ادخال ملاحظة (اختياري)</string>
+    <string name="select_date">الرجاء تحديد تاريخ في غضون 30 يوما من اليوم</string>
+    <string name="date_of_service">تاريخ الخدمة</string>
+    <string name="time_slot">فتحة مرة</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="my_appliance_lower">أجهزتي</string>
+    <string name="request_history">تاريخ الطلب</string>
+    <string name="my_diagnosis">بلدي التشخيص</string>
+    <string name="knowledge_base">قاعدة المعرفة</string>
+    <string name="faqs">أسئلة متكررة</string>
+    <string name="contact">الإتصال</string>
+    <string name="support">الدعم</string>
+    <string name="logout">الخروج</string>
+    <string name="login">الدخول في</string>
+    <string name="forgot_password">هل نسيت كلمة المرور؟</string>
+    <string name="sign_up">Signup</string>
+    <string name="facebook">الفيس بوك</string>
+    <string name="register">التسجيل</string>
+    <string name="log_in">الدخول في</string>
+    <string name="cancel">الغاء</string>
+    <string name="issue_image">قضية صورة</string>
+    <string name="brand_rating">الماركة تصنيف :</string>
+    <string name="service_rating">تصنيف خدمة :</string>
+    <string name="submit">تقديم</string>
+    <string name="confirm_request">تأكيد طلب</string>
+    <string name="open">مفتوح</string>
+    <string name="location">موقع</string>
+
+</resources>

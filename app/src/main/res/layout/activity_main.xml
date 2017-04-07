@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/App_background">
+
+                    <TextView
+                        android:id="@+id/scoreTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="40dp"
+                        android:text="@string/Score"
+                        android:textColor="@android:color/white"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:id="@+id/scoreValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/scoreTitle"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/default_score"
+                        android:textColor="@android:color/white"
+                        android:textSize="55sp" />
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/scoreResult"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/scoreValue"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:paddingLeft="15dp"-->
+                    <!--android:text="asdf"-->
+                    <!--android:paddingRight="15dp"-->
+                    <!--android:textColor="@android:color/white"-->
+                    <!--android:textSize="20sp" />-->
+
+                    <TextView
+                        android:id="@+id/lastCheckDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:background="@color/App_background"
+                        android:padding="2dp"
+                        android:text="@string/last_check"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/qutrustlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@android:color/white">
+
+
+                    <TextView
+                        android:id="@+id/certificatenumbertitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/CertificateNumbertitles"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="17sp" />
+
+                    <ImageButton
+                        android:id="@+id/view_certificate_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/certificatenumbertitle"
+                        android:background="@drawable/retry"
+                        android:src="@drawable/retry" />
+
+                    <TextView
+                        android:id="@+id/certificatenumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/certificatenumbertitle"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="35dp"
+                        android:text="@string/CertificateNumber"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="28sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/quikrlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="178dp"
+                    android:background="#f0f0f0"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/quikrimg1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/launcher_icon2" />
+
+                    <TextView
+                        android:id="@+id/quikrtxt2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="@string/offer_price"
+                        android:textColor="@color/text_color"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/textViewINR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/quikrtxt2"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="@string/default_price_INR"
+                        android:textColor="@color/text_color"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textViewINR"
+                        android:layout_toLeftOf="@+id/textViewINR"
+                        android:layout_toStartOf="@+id/textViewINR"
+                        android:src="@drawable/btn_accept" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/imageView3"
+                        android:layout_toEndOf="@+id/textViewINR"
+                        android:layout_toRightOf="@+id/textViewINR"
+                        android:src="@drawable/btn_decline" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent" />
+
+                    <com.viewpagerindicator.CirclePageIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="fill_parent"
+                        android:layout_height="20dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:background="@android:color/transparent"
+                        android:padding="5dp"
+                        app:fillColor="@android:color/white"
+                        app:pageColor="@android:color/black"
+                        app:radius="5dp"
+                        app:strokeColor="@android:color/black"
+                        app:strokeWidth="1dp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/pulseview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D9000000"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/test_start"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView6"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="1dp"
+            android:src="@drawable/ic_pulse" />
+    </RelativeLayout>
+
+</RelativeLayout>

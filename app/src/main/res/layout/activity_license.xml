@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/qutrustlogo" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/pin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/add"
+        android:layout_marginTop="60dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:hintTextAppearance="@android:style/TextAppearance.Medium">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/pinedit"
+            android:inputType="number"
+            android:layout_below="@+id/add1"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/black"
+            android:maxLength="7"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+   <!-- <RelativeLayout
+        android:id="@+id/qutrustlayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="150dp"
+        >
+
+
+        <ImageButton
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/license_check_button"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/licensesubmit"
+            android:background="@drawable/licensesubmit" />
+    </RelativeLayout>-->
+
+
+
+</LinearLayout>

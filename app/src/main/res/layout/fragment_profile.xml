@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    android:orientation="vertical">
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/header"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="MY PROFILE"
+        android:textColor="@color/header_text_color"
+        android:textSize="@dimen/text_25px" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvFooter"
+        android:layout_below="@+id/tvHeader"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/horizontal_selector_black"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:padding="@dimen/margin_5"
+                android:textColor="@color/black" />
+
+
+            <EditText
+                android:id="@+id/etNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etName"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/horizontal_selector_black"
+                android:editable="false"
+                android:focusable="false"
+                android:inputType="phone"
+                android:padding="@dimen/margin_5"
+                android:textColor="@color/Gray" />
+
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etNumber"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/horizontal_selector_black"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/margin_5"
+                android:layout_marginBottom="@dimen/margin_40"
+                android:textColor="@color/black" />
+
+
+            <com.service.easyservice.widgets.TextViewOpenSansRegular
+                android:id="@+id/tvManageAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etEmail"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/margin_3"
+                android:layout_margin="@dimen/margin_3"
+                android:background="@color/button_bg"
+                android:paddingLeft="@dimen/margin_20"
+                android:paddingRight="@dimen/margin_20"
+                android:gravity="center"
+
+                android:text="Manage Addresses"
+                android:textColor="@color/button_text" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text="UPDATE PROFILE"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+
+</RelativeLayout>

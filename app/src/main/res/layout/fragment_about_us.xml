@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    android:orientation="vertical">
+
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/header"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="ABOUT EASYSERVICE"
+        android:textColor="@color/header_text_color"
+
+        android:textSize="@dimen/text_25px" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvFooter"
+        android:layout_below="@+id/tvHeader">
+
+        <com.service.easyservice.widgets.TextViewOpenSansRegular
+            android:id="@+id/tvAboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvHeader"
+            android:layout_marginTop="@dimen/margin_30"
+            android:gravity="center_vertical"
+            android:paddingEnd="@dimen/margin_10"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:paddingStart="@dimen/margin_10"
+            android:text="Easy Service is your personal assistant for all consumer devices and appliances like mobile, refrigerator, air conditioner etc.
+It’s a single gateway for managing service and maintenance which aims at delivering the most convenient and transparent services right at your doorstep!
+\n\n
+To know more please visit: www.easyservices.me
+\n\n
+Write to us support@arintechsa.com"
+            android:textColor="@color/black"
+
+            android:autoLink="email|phone|web"
+            android:textSize="@dimen/text_20px" />
+
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+
+</RelativeLayout>

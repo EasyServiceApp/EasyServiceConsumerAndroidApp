@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/DrawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="7dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar"></include>
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <!--<android.support.v7.widget.RecyclerView
+        android:id="@+id/RecyclerView"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+
+        android:background="#ffffff"
+        android:scrollbars="vertical">
+
+    </android.support.v7.widget.RecyclerView>-->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rlLeftDrawer"
+        android:layout_width="@dimen/margin_250"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/drawer_bg"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/ivDrawerlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_20"
+            android:src="@drawable/drawer_logo" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ivFooter"
+            android:layout_below="@+id/ivDrawerlogo"
+            android:layout_marginTop="@dimen/margin_20"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvMyAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:drawableLeft="@drawable/ic_drawer_home"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="@string/home"
+                    android:textColor="@color/drawer_text"
+                    android:textSize="@dimen/text_22px" />
+
+
+                <TextView
+                    android:id="@+id/tvMyProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvMyAccount"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_drawer_profile"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="My Profile"
+                    android:textColor="@color/drawer_text"
+                    android:textSize="@dimen/text_22px"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvMembership"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvMyProfile"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_drawer_membership"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="Membership"
+                    android:textColor="@color/drawer_text"
+                    android:textSize="@dimen/text_22px"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvMyDevices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvMembership"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_drawer_my_device"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="My Devices"
+                    android:textColor="@color/drawer_text"
+                    android:textSize="@dimen/text_22px" />
+
+                <TextView
+                    android:id="@+id/tvServiceHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvMyDevices"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_drawer_service_history"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="Service History"
+                    android:textColor="@color/drawer_text"
+                    android:textSize="@dimen/text_22px" />
+
+                <TextView
+                    android:id="@+id/tvSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvServiceHistory"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_drawer_support"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="Support"
+                    android:textColor="@color/drawer_text"
+                    android:textSize="@dimen/text_22px"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvAboutEasyService"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSupport"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_drawer_about_us"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="About EasyService"
+                    android:textColor="@color/drawer_text"
+                    android:textSize="@dimen/text_22px"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="38dp"
+                    android:layout_marginLeft="25dp"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="@string/logout"
+                    android:textColor="@color/drawer_text"
+                    android:textSize="@dimen/text_22px"
+                    android:visibility="gone"
+
+                    />
+            </RelativeLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/ivFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/footer" />
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

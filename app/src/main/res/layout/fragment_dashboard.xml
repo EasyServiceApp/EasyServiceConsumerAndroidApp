@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dashboard_header_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlDeviceInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_25">
+
+        <TextView
+            android:id="@+id/tvMakeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_20"
+            android:ems="6"
+            android:text="Device Make"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20px" />
+
+        <TextView
+            android:id="@+id/tvModelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMakeLabel"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ems="6"
+            android:text="Device Model"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20px" />
+
+        <TextView
+            android:id="@+id/tvIMEILabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvModelLabel"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ems="6"
+            android:text="IMEI Number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20px" />
+
+        <TextView
+            android:id="@+id/tvMake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_toRightOf="@id/tvMakeLabel"
+            android:ems="6"
+            android:text="Device Make"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20px" />
+
+        <TextView
+            android:id="@+id/tvModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMakeLabel"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_toRightOf="@id/tvModelLabel"
+            android:ems="6"
+            android:text="Device Model"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20px" />
+
+        <TextView
+            android:id="@+id/tvIMEI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvModelLabel"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_toRightOf="@+id/tvIMEILabel"
+            android:ems="6"
+            android:text="IMEI Number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20px" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlMyDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlDeviceInformation"
+        android:layout_marginTop="@dimen/margin_50"
+        android:background="@drawable/dashboard_device_info_bg"
+        android:gravity="center_vertical">
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_10"
+            android:weightSum="2">-->
+
+        <TextView
+            android:id="@+id/tvMyDevicesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:layout_weight="1"
+            android:background="@drawable/dashboard_my_device_bg"
+            android:gravity="center"
+            android:text="1\nDevice Added\n\nHit to add more"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_12px" />
+
+
+        <LinearLayout
+            android:id="@+id/llMyRequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="29dp"
+            android:layout_marginRight="29dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvMyDevices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dashboard_my_request"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_50px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center"
+                android:text="My Requests"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_20px" />
+        </LinearLayout>
+
+
+        <!--</LinearLayout>-->
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawableLeft="@drawable/dashboard_request_service"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text="Request Service"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+
+</RelativeLayout>

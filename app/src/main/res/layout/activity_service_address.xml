@@ -1,0 +1,214 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    tools:context="com.service.easyservice.AddDeviceActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"></include>
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_bar"
+        android:background="@drawable/header"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="SERVICE REQUEST"
+        android:textColor="@color/header_text_color"
+        android:textSize="@dimen/text_25px" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvFooter"
+        android:layout_below="@+id/tvHeader"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_10">
+
+            <LinearLayout
+                android:id="@+id/llHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/ivCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:background="@drawable/category_filled_circle"
+                    android:padding="@dimen/margin_10"
+                    android:src="@drawable/ic_my_devices_mobile" />
+
+                <com.service.easyservice.widgets.TextViewOpenSansRegular
+                    android:id="@+id/tvBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:ellipsize="end"
+                    android:text="SAMSUNG\nS3601"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_12px" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvServiceModeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llHeader"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_20"
+                android:ems="6"
+                android:text="Service Mode:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_20px" />
+
+            <TextView
+                android:id="@+id/tvServiceMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llHeader"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_toRightOf="@id/tvServiceModeLabel"
+                android:ems="6"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_20px" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvSelectLocationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvServiceModeLabel"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ems="7"
+                android:text="Service Location:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <Spinner
+                android:id="@+id/spinnerLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvServiceModeLabel"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_toRightOf="@+id/tvSelectLocationLabel"
+                android:background="@color/spinner_bg"
+                android:entries="@array/location_array"
+                android:padding="@dimen/margin_5" />
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinnerLocation"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_toLeftOf="@+id/ivLocation"
+                android:background="@color/white"
+                android:hint="Address"
+                android:lines="4"
+                android:padding="@dimen/margin_5"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ivLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/spinnerLocation"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_location"
+                android:visibility="gone" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvRequestDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etAddress"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ems="7"
+                android:text="Request Date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_12px" />
+
+            <EditText
+                android:id="@+id/etRequestDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etAddress"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_toRightOf="@+id/tvRequestDate"
+                android:background="@drawable/horizontal_selector_black"
+                android:focusable="false"
+                android:inputType="textPersonName"
+                android:padding="@dimen/margin_5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_12px" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvSelectTimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRequestDate"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ems="7"
+                android:text="Select Time:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <Spinner
+                android:id="@+id/spinnerTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRequestDate"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_toRightOf="@+id/tvSelectTimeLabel"
+                android:background="@color/spinner_bg"
+                android:padding="@dimen/margin_5" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text="Request Service"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+</RelativeLayout>

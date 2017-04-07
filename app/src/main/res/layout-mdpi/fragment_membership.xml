@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    android:orientation="vertical">
+
+
+
+
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/header"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="MEMBERSHIP"
+        android:textColor="@color/header_text_color"
+        android:textSize="@dimen/text_25px" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvFooter"
+        android:layout_below="@+id/tvHeader">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <RadioGroup
+                android:id="@+id/rgOS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/tvWarranty"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:drawableLeft="@drawable/android_icon"
+                    android:tag="android"/>
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ios_icon"
+                    android:text=""
+                    android:tag="ios"/>/>
+
+
+            </RadioGroup>
+
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvCurrentPlanLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_below="@+id/rgOS"
+                android:gravity="center_vertical"
+                android:text="Current Plan"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_20px" />
+
+            <ImageView
+                android:id="@+id/ivCurrentPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCurrentPlanLabel"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@drawable/ic_drawer_membership"
+                android:padding="@dimen/margin_10" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvCurrentPlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCurrentPlanLabel"
+                android:layout_marginRight="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_toLeftOf="@+id/tvPlan1Upgrade"
+                android:layout_toRightOf="@+id/ivPlan1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_10"
+                android:text="Standard"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_20px" />
+
+
+            <com.service.easyservice.widgets.TextViewOpenSansRegular
+                android:id="@+id/tvCurrentUpgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvCurrentPlanLabel"
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@color/button_bg"
+                android:padding="@dimen/margin_5"
+                android:text="Details"
+                android:textColor="@color/button_text"
+                android:textSize="@dimen/text_20px" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansRegular
+                android:id="@+id/tvUpgradeMembershipLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvCurrentPlan"
+                android:layout_marginTop="@dimen/margin_40"
+                android:background="@color/button_bg"
+                android:paddingBottom="@dimen/margin_5"
+                android:paddingLeft="@dimen/margin_30"
+                android:paddingTop="@dimen/margin_5"
+                android:text="Upgrade Membership"
+                android:textColor="@color/button_text"
+                android:textSize="@dimen/text_20px" />
+
+            <ImageView
+                android:id="@+id/ivPlan1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvUpgradeMembershipLabel"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_35"
+                android:background="@drawable/ic_drawer_membership"
+                android:padding="@dimen/margin_10" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvPlan1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvUpgradeMembershipLabel"
+                android:layout_marginRight="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_30"
+                android:layout_toLeftOf="@+id/tvPlan1Upgrade"
+                android:layout_toRightOf="@+id/ivPlan1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_10"
+                android:text="Platinum"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_20px" />
+
+
+            <com.service.easyservice.widgets.TextViewOpenSansRegular
+                android:id="@+id/tvPlan1Upgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvUpgradeMembershipLabel"
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_30"
+                android:background="@color/button_bg"
+                android:padding="@dimen/margin_5"
+                android:text="Details"
+                android:textColor="@color/button_text"
+                android:textSize="@dimen/text_20px" />
+
+            <ImageView
+                android:id="@+id/ivPlan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPlan1"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_35"
+                android:background="@drawable/ic_drawer_membership"
+                android:padding="@dimen/margin_10" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvPlan2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPlan1"
+                android:layout_marginRight="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_30"
+                android:layout_toLeftOf="@+id/tvPlan1Upgrade"
+                android:layout_toRightOf="@+id/ivPlan1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_10"
+                android:text="Premium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_20px" />
+
+
+            <com.service.easyservice.widgets.TextViewOpenSansRegular
+                android:id="@+id/tvPlan2Upgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvPlan1"
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_30"
+                android:background="@color/button_bg"
+                android:padding="@dimen/margin_5"
+                android:text="Details"
+                android:textColor="@color/button_text"
+                android:textSize="@dimen/text_20px" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+
+</RelativeLayout>

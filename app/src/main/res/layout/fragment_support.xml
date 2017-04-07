@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    android:orientation="vertical">
+
+
+    <com.service.easyservice.widgets.TextViewOpenSansRegular
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/header"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingStart="@dimen/margin_20"
+        android:text="SUPPORT"
+        android:textColor="@color/header_text_color"
+        android:textSize="@dimen/text_25px" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvFooter"
+        android:layout_below="@+id/tvHeader">
+
+        <RelativeLayout
+            android:id="@+id/rlDeviceInformation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_25"
+            >
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_20"
+                android:ems="3"
+                android:text="Name:"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvMobileLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNameLabel"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ems="3"
+                android:text="Mobile:"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvEmailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMobileLabel"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ems="3"
+                android:text="Email:"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansRegular
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_toRightOf="@id/tvNameLabel"
+                android:text="Mike Henry"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansRegular
+                android:id="@+id/tvMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNameLabel"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_toRightOf="@id/tvMobileLabel"
+                android:text="9999999999"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansRegular
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMobileLabel"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:visibility="gone"
+                android:layout_toRightOf="@+id/tvEmailLabel"
+                android:text="mike.henry@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvSelectCategoryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEmailLabel"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ems="6"
+                android:text="Select Category:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvSelectCategoryLabel"
+                android:layout_below="@+id/tvEmailLabel"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@color/spinner_bg"
+                android:padding="@dimen/margin_5"
+                android:entries="@array/support_category"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:layout_marginTop="@dimen/margin_20"
+                android:src="@drawable/ic_down_arrow"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/margin_5"
+                android:visibility="gone"
+                android:layout_below="@+id/tvEmailLabel"
+                android:layout_marginRight="@dimen/margin_15"
+                 />
+            <com.service.easyservice.widgets.TextViewOpenSansBold
+                android:id="@+id/tvRemarkLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:text="Remarks:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15px" />
+            <EditText
+                android:id="@+id/etMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRemarkLabel"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_40"
+                android:background="@drawable/rectangle_border"
+                android:hint=""
+                android:textSize="@dimen/text_15px"
+                android:maxLines="5"
+                android:minLines="5"
+                android:gravity="start"
+                android:inputType="textMultiLine"
+                android:padding="@dimen/margin_5"
+                android:textColor="@color/black"
+                />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:drawablePadding="@dimen/margin_10"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_10"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_25px" />
+
+</RelativeLayout>
