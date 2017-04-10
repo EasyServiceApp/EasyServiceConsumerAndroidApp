@@ -51,9 +51,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
             android:layout_marginTop="@dimen/margin_20"
             android:layout_toRightOf="@id/tvMakeLabel"
-            android:ems="6"
             android:text="Device Make"
             android:textColor="@color/white"
             android:textSize="@dimen/text_20px" />
@@ -64,9 +64,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvMakeLabel"
             android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
             android:layout_marginTop="@dimen/margin_15"
             android:layout_toRightOf="@id/tvModelLabel"
-            android:ems="6"
             android:text="Device Model"
             android:textColor="@color/white"
             android:textSize="@dimen/text_20px" />
@@ -78,8 +78,8 @@
             android:layout_below="@+id/tvModelLabel"
             android:layout_marginLeft="@dimen/margin_10"
             android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginRight="@dimen/margin_10"
             android:layout_toRightOf="@+id/tvIMEILabel"
-            android:ems="6"
             android:text="IMEI Number"
             android:textColor="@color/white"
             android:textSize="@dimen/text_20px" />

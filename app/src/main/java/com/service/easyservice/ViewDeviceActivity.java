@@ -40,7 +40,7 @@ public class ViewDeviceActivity extends AppCompatActivity implements View.OnClic
     private Myappliance myappliance;
     Gson gson = new Gson();
     Type type = new TypeToken<Myappliance>() {}.getType();
-    ImageView ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
     String myApplianceStr;
 
@@ -56,12 +56,18 @@ public class ViewDeviceActivity extends AppCompatActivity implements View.OnClic
         init();
     }
 
+
+
     public void init()
     {
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-
+        ivProfile = (ImageView)toolbar.findViewById(R.id.ivProfile);
+        ivProfile.setVisibility(View.GONE);
+        ivDrawerHandel = (ImageView)toolbar.findViewById(R.id.ivDrawerHandel);
+        ivDrawerHandel.setImageResource(R.drawable.toolbar_back);
+        ivDrawerHandel.setOnClickListener(this);
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
@@ -193,6 +199,11 @@ public class ViewDeviceActivity extends AppCompatActivity implements View.OnClic
                 Intent intentRequestService = new Intent(ViewDeviceActivity.this,ServiceRequestActivity.class);
                 new AppPreferences(ViewDeviceActivity.this).addServiceDevice(myappliance);
                 startActivity(intentRequestService);
+                finish();
+                break;
+
+            case R.id.ivDrawerHandel:
+                finish();
                 break;
 
 

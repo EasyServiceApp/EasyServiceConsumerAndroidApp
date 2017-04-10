@@ -15,7 +15,7 @@ public class MembershipDetailActivity extends AppCompatActivity implements View.
 
     WebView webView;
     String url = "";
-    ImageView ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
 
     @Override
@@ -25,7 +25,11 @@ public class MembershipDetailActivity extends AppCompatActivity implements View.
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-
+        ivProfile = (ImageView)toolbar.findViewById(R.id.ivProfile);
+        ivProfile.setVisibility(View.GONE);
+        ivDrawerHandel = (ImageView)toolbar.findViewById(R.id.ivDrawerHandel);
+        ivDrawerHandel.setImageResource(R.drawable.toolbar_back);
+        ivDrawerHandel.setOnClickListener(this);
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
@@ -64,6 +68,9 @@ public class MembershipDetailActivity extends AppCompatActivity implements View.
         {
             case R.id.ivToolbarHome:
                 CommonFunctions.navigateToHome(MembershipDetailActivity.this);
+                break;
+            case R.id.ivDrawerHandel:
+                finish();
                 break;
 
         }

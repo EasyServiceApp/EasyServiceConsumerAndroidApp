@@ -83,13 +83,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/etEmail"
                 android:layout_centerHorizontal="true"
-                android:padding="@dimen/margin_3"
+                android:padding="@dimen/margin_5"
                 android:layout_margin="@dimen/margin_3"
                 android:background="@color/button_bg"
                 android:paddingLeft="@dimen/margin_20"
                 android:paddingRight="@dimen/margin_20"
                 android:gravity="center"
-
+                android:ems="8"
                 android:text="Manage Addresses"
                 android:textColor="@color/button_text" />
 
@@ -106,7 +106,7 @@
         android:drawablePadding="@dimen/margin_10"
         android:gravity="center"
         android:paddingLeft="@dimen/margin_10"
-        android:text="UPDATE PROFILE"
+        android:text="Update Profile"
         android:textColor="@color/white"
         android:textSize="@dimen/text_25px" />
 

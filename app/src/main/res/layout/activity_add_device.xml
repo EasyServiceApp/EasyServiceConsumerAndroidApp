@@ -316,7 +316,7 @@
         android:drawablePadding="@dimen/margin_10"
         android:gravity="center"
         android:paddingLeft="@dimen/margin_10"
-        android:text="ADD DEVICE"
+        android:text="Add Device"
         android:textColor="@color/white"
         android:textSize="@dimen/text_25px" />
 </RelativeLayout>

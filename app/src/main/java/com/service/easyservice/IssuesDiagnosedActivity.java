@@ -1,7 +1,9 @@
 package com.service.easyservice;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,7 +15,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.service.easyservice.models.Myappliance;
 import com.service.easyservice.util.AppPreferences;
-import com.service.easyservice.util.CommonFunctions;
 
 import java.lang.reflect.Type;
 
@@ -27,7 +28,7 @@ public class IssuesDiagnosedActivity extends AppCompatActivity implements View.O
     String[] issuesList;
     String deviceStr,issues;
     //no change
-    ImageView ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
 
     @Override
@@ -45,12 +46,44 @@ public class IssuesDiagnosedActivity extends AppCompatActivity implements View.O
         init();
 
     }
+
+    public void finishActivity()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.app_name)
+                .setMessage("Are you sure you want to cancel the Service Request?")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        finish();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+
+        finishActivity();
+
+    }
+
     public void init()
     {
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-
+        ivProfile = (ImageView)toolbar.findViewById(R.id.ivProfile);
+        ivProfile.setVisibility(View.GONE);
+        ivDrawerHandel = (ImageView)toolbar.findViewById(R.id.ivDrawerHandel);
+        ivDrawerHandel.setImageResource(R.drawable.toolbar_back);
+        ivDrawerHandel.setOnClickListener(this);
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
@@ -90,9 +123,9 @@ public class IssuesDiagnosedActivity extends AppCompatActivity implements View.O
             case R.id.tvPickUp:
                 Intent intent = new Intent(IssuesDiagnosedActivity.this,ServiceAddressActivity.class);
                 intent.putExtra("issues",issues);
-                intent.putExtra("device",deviceStr);
                 intent.putExtra("service_mode","pick_up");
                 startActivity(intent);
+                finish();
                 break;
             case R.id.tvAtHome:
                 //navigate to address activity
@@ -100,6 +133,7 @@ public class IssuesDiagnosedActivity extends AppCompatActivity implements View.O
                 intent1.putExtra("issues",issues);
                 intent1.putExtra("service_mode","at_home");
                 startActivity(intent1);
+                finish();
                 break;
 
             case R.id.tvDropOff:
@@ -107,12 +141,12 @@ public class IssuesDiagnosedActivity extends AppCompatActivity implements View.O
                 intent2.putExtra("issues",issues);
                 intent2.putExtra("service_mode","drop_off");
                 startActivity(intent2);
+                finish();
                 break;
 
-
-
+            case R.id.ivDrawerHandel:
             case R.id.ivToolbarHome:
-                CommonFunctions.navigateToHome(IssuesDiagnosedActivity.this);
+                finishActivity();
                 break;
 
         }

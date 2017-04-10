@@ -23,6 +23,7 @@
     <dimen name="text_24px">22sp</dimen>
     <dimen name="text_15px">17sp</dimen>
     <dimen name="text_25px">23sp</dimen>
+    <dimen name="text_30px">30sp</dimen>
     <dimen name="text_50px">50sp</dimen>
 
     <!-- set controls padding -->

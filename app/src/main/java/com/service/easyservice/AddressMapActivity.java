@@ -139,4 +139,9 @@ public class AddressMapActivity extends AppCompatActivity implements OnMapReadyC
                 break;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

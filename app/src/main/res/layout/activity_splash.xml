@@ -28,7 +28,7 @@
         android:drawablePadding="16dp"
         android:text="EasyService"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_25px"
+        android:textSize="@dimen/text_30px"
         android:textStyle="bold"
         android:visibility="visible" />
     <!--<TextView-->

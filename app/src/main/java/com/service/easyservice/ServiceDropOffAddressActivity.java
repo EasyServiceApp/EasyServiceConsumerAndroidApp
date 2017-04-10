@@ -43,7 +43,7 @@ public class ServiceDropOffAddressActivity extends AppCompatActivity implements 
     String issues,serviceMode;
     Type type = new TypeToken<Myappliance>(){}.getType();
     Gson gson = new Gson();
-    ImageView ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
 
     @Override
@@ -59,7 +59,11 @@ public class ServiceDropOffAddressActivity extends AppCompatActivity implements 
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-
+        ivProfile = (ImageView)toolbar.findViewById(R.id.ivProfile);
+        ivProfile.setVisibility(View.GONE);
+        ivDrawerHandel = (ImageView)toolbar.findViewById(R.id.ivDrawerHandel);
+        ivDrawerHandel.setImageResource(R.drawable.toolbar_back);
+        ivDrawerHandel.setOnClickListener(this);
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
@@ -81,6 +85,33 @@ public class ServiceDropOffAddressActivity extends AppCompatActivity implements 
         etRequestDate.setOnClickListener(this);
 
 
+
+    }
+
+    public void finishActivity()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.app_name)
+                .setMessage("Are you sure you want to cancel the Service Request?")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        finish();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+
+        finishActivity();
 
     }
 
@@ -122,8 +153,9 @@ public class ServiceDropOffAddressActivity extends AppCompatActivity implements 
                 newFragment.show(getSupportFragmentManager(), "datePicker");
                 break;
 
+            case R.id.ivDrawerHandel:
             case R.id.ivToolbarHome:
-                CommonFunctions.navigateToHome(ServiceDropOffAddressActivity.this);
+                finishActivity();
                 break;
         }
     }

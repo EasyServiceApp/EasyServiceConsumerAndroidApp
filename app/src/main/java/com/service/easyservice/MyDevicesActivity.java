@@ -33,7 +33,7 @@ public class MyDevicesActivity extends AppCompatActivity implements View.OnClick
     LinearLayout llDevices;
     LayoutInflater inflater;
     TextView tvFooter;
-    ImageView ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
 
     @Override
@@ -43,7 +43,11 @@ public class MyDevicesActivity extends AppCompatActivity implements View.OnClick
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-
+        ivProfile = (ImageView)toolbar.findViewById(R.id.ivProfile);
+        ivProfile.setVisibility(View.GONE);
+        ivDrawerHandel = (ImageView)toolbar.findViewById(R.id.ivDrawerHandel);
+        ivDrawerHandel.setImageResource(R.drawable.toolbar_back);
+        ivDrawerHandel.setOnClickListener(this);
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
@@ -60,6 +64,13 @@ public class MyDevicesActivity extends AppCompatActivity implements View.OnClick
         super.onResume();
         getMyDevice();
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+    }
+
 
     public void getMyDevice()
     {
@@ -166,6 +177,9 @@ public class MyDevicesActivity extends AppCompatActivity implements View.OnClick
         {
             case R.id.ivToolbarHome:
                 CommonFunctions.navigateToHome(MyDevicesActivity.this);
+                break;
+            case R.id.ivDrawerHandel:
+                finish();
                 break;
 
         }

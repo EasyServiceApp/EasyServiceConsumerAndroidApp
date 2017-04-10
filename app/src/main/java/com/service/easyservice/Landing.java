@@ -46,7 +46,7 @@ public class Landing extends AppCompatActivity implements View.OnClickListener {
     int DASHBOARD = 0, LOGIN = 2,PROFILE = 1,MYDEVICES = 3,ABOUTUS = 4,SUPPORT = 5, MEMBERSHIP = 6,SERVICEHISTORY = 7;
     int selectedScreen = 0;
 
-    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome,ivDrawerlogo;
 
     TextView tvMyAccount,tvMyProfile,tvMyDevices,tvAboutEasyService,tvSupport,tvMembership,tvServiceHistory;
     @Override
@@ -86,6 +86,8 @@ public class Landing extends AppCompatActivity implements View.OnClickListener {
 
         tvSupport = (TextView) findViewById(R.id.tvSupport);
         tvSupport.setOnClickListener(this);
+        ivDrawerlogo = (ImageView) findViewById(R.id.ivDrawerlogo);
+        ivDrawerlogo.setOnClickListener(this);
 
         rlLeftDrawer.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -134,6 +136,7 @@ public class Landing extends AppCompatActivity implements View.OnClickListener {
                 Drawer.closeDrawer(rlLeftDrawer);
                 break;
             case R.id.ivToolbarHome:
+            case R.id.ivDrawerlogo:
             case R.id.tvMyAccount:
                 //open login page if not logged in else open profile page
                 setDashboardPage();

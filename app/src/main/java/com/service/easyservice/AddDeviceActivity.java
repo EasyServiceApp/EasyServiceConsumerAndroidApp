@@ -3,6 +3,7 @@ package com.service.easyservice;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -11,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -63,7 +65,7 @@ public class AddDeviceActivity extends AppCompatActivity implements View.OnClick
     private Myappliance myappliance;
     Gson gson = new Gson();
     Type type = new TypeToken<Myappliance>() {}.getType();
-    ImageView ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
     String filep;
     @Override
@@ -83,7 +85,11 @@ public class AddDeviceActivity extends AppCompatActivity implements View.OnClick
     {
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-
+        ivProfile = (ImageView)toolbar.findViewById(R.id.ivProfile);
+        ivProfile.setVisibility(View.GONE);
+        ivDrawerHandel = (ImageView)toolbar.findViewById(R.id.ivDrawerHandel);
+        ivDrawerHandel.setImageResource(R.drawable.toolbar_back);
+        ivDrawerHandel.setOnClickListener(this);
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
@@ -234,6 +240,10 @@ public class AddDeviceActivity extends AppCompatActivity implements View.OnClick
                 loading.setCanceledOnTouchOutside(false);
                 loading.show();
                 VolleySingleton.getInstance(this).addToRequestQueue(multipartRequest);
+                break;
+
+            case R.id.ivDrawerHandel:
+                finishActivity();
                 break;
         }
 
@@ -446,4 +456,31 @@ public class AddDeviceActivity extends AppCompatActivity implements View.OnClick
         loading.dismiss();
         CommonFunctions.displayDialog(this, RESPONSE_ISSUE_MESSAGE);
     }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+
+        finishActivity();
+    }
+
+    public void finishActivity()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.app_name)
+                .setMessage("Are you sure you want to cancel Adding Device?")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        finish();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
 }

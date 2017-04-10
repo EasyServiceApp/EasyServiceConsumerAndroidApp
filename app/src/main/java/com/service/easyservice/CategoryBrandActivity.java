@@ -36,7 +36,7 @@ public class CategoryBrandActivity extends AppCompatActivity implements View.OnC
     private ArrayAdapter<String> modelAdapter;
     int selectedCategory = 0;
     private Myappliance myappliance = new Myappliance();
-    ImageView ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
 
     @Override
@@ -50,7 +50,11 @@ public class CategoryBrandActivity extends AppCompatActivity implements View.OnC
     {
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-
+        ivProfile = (ImageView)toolbar.findViewById(R.id.ivProfile);
+        ivProfile.setVisibility(View.GONE);
+        ivDrawerHandel = (ImageView)toolbar.findViewById(R.id.ivDrawerHandel);
+        ivDrawerHandel.setImageResource(R.drawable.toolbar_back);
+        ivDrawerHandel.setOnClickListener(this);
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
@@ -148,7 +152,17 @@ public class CategoryBrandActivity extends AppCompatActivity implements View.OnC
                 CommonFunctions.navigateToHome(CategoryBrandActivity.this);
                 break;
 
+            case R.id.ivDrawerHandel:
+                finish();
+                break;
+
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

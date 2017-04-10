@@ -19,7 +19,7 @@
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/margin_20"
         android:paddingStart="@dimen/margin_20"
-        android:text="Addresses"
+        android:text="ADDRESSES"
         android:textColor="@color/header_text_color"
         android:textSize="@dimen/text_25px" />
 

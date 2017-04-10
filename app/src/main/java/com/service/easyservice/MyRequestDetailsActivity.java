@@ -21,7 +21,7 @@ public class MyRequestDetailsActivity extends AppCompatActivity implements View.
     Type type = new TypeToken<Myrequest>() {}.getType();
 
     TextView tvBrand,tvStatus,tvRating,tvRequestDate,tvAssignedMechanic,tvIssue,tvRemark,tvFooter,tvRequestId,tvModel;
-    ImageView ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +35,21 @@ public class MyRequestDetailsActivity extends AppCompatActivity implements View.
         init();
 
     }
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
     public void init()
     {
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-
+        ivProfile = (ImageView)toolbar.findViewById(R.id.ivProfile);
+        ivProfile.setVisibility(View.GONE);
+        ivDrawerHandel = (ImageView)toolbar.findViewById(R.id.ivDrawerHandel);
+        ivDrawerHandel.setImageResource(R.drawable.toolbar_back);
+        ivDrawerHandel.setOnClickListener(this);
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
@@ -123,6 +131,10 @@ public class MyRequestDetailsActivity extends AppCompatActivity implements View.
         {
             case R.id.ivToolbarHome:
                 CommonFunctions.navigateToHome(MyRequestDetailsActivity.this);
+                break;
+
+            case R.id.ivDrawerHandel:
+                finish();
                 break;
 
         }

@@ -29,7 +29,7 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
     ImageView ivHomeLocation,ivWorkLocation,ivOtherLocation;
 
     EditText etHomeAddress,etWorkAddress,etOtherAddress;
-    ImageView ivToolbarHome;
+    ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
     TextView tvFooter;
 
@@ -40,7 +40,11 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-
+        ivProfile = (ImageView)toolbar.findViewById(R.id.ivProfile);
+        ivProfile.setVisibility(View.GONE);
+        ivDrawerHandel = (ImageView)toolbar.findViewById(R.id.ivDrawerHandel);
+        ivDrawerHandel.setImageResource(R.drawable.toolbar_back);
+        ivDrawerHandel.setOnClickListener(this);
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
@@ -83,6 +87,9 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.ivToolbarHome:
                 CommonFunctions.navigateToHome(ManageAddressActivity.this);
+                break;
+            case R.id.ivDrawerHandel:
+                finish();
                 break;
             case R.id.tvFooter:
                 if (CommonFunctions.isNetworkAvailable(this)) {
@@ -169,5 +176,10 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
 
 
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
