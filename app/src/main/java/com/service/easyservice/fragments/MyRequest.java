@@ -53,11 +53,17 @@ public class MyRequest extends Fragment implements ResponseResult, AdapterView.O
         applianceList = new ArrayList<>();
 
         lvMyService.setAdapter(new AppointmentAdapter(activityContext, applianceList));
-        getMyRequestDetais();
+        //getMyRequestDetais();
 
 
         return layout;
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getMyRequestDetais();
     }
 
     private void getMyRequestDetais() {
@@ -84,6 +90,7 @@ public class MyRequest extends Fragment implements ResponseResult, AdapterView.O
             if("1".equals(requestServiceListResponse.getStatus()))
             {
                 if(requestServiceListResponse.getMyrequest() != null && requestServiceListResponse.getMyrequest().size() > 0) {
+                    applianceList.clear();
                     applianceList.addAll(requestServiceListResponse.getMyrequest());
                     ((AppointmentAdapter) lvMyService.getAdapter()).notifyDataSetChanged();
                 }

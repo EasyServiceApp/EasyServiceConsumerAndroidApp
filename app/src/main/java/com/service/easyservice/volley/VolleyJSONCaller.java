@@ -17,7 +17,9 @@ import com.service.easyservice.R;
 import com.service.easyservice.models.AddApplianceResponse;
 import com.service.easyservice.models.DashboardResponse;
 import com.service.easyservice.models.DeleteApplianceResponse;
+import com.service.easyservice.models.LocationInfo;
 import com.service.easyservice.models.MyApplianceResponse;
+import com.service.easyservice.models.NoDataResponse;
 import com.service.easyservice.models.OTPVerifyResponse;
 import com.service.easyservice.models.RequestOTPResponse;
 import com.service.easyservice.models.RequestServiceListResponse;
@@ -59,12 +61,17 @@ public class VolleyJSONCaller implements Constants {
         this.params = params;
         this.httpMethod = httpMethod;
         this.flagSilent = flagSilent;
-
-        progressHUD = KProgressHUD.create(context)
-                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                .setLabel(context.getString(R.string.progress_please_wait))
-                .setCancellable(false)
-                .setAnimationSpeed(2);
+        try {
+            progressHUD = KProgressHUD.create(context)
+                    .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                    .setLabel(context.getString(R.string.progress_please_wait))
+                    .setCancellable(false)
+                    .setAnimationSpeed(2);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public VolleyJSONCaller(Fragment fragment, String apiName, Map<String, String> params, int httpMethod, boolean flagSilent) {
@@ -199,6 +206,18 @@ public class VolleyJSONCaller implements Constants {
                                 }.getType();
                                 SupportTicketResponse supportTicketResponse = gson.fromJson(response, type);
                                 resultGeoname.responseResult(supportTicketResponse);
+                                break;
+                            case MY_REQUEST_FEEDBACK_URL:
+                                type = new TypeToken<NoDataResponse>() {
+                                }.getType();
+                                NoDataResponse noDataResponse = gson.fromJson(response, type);
+                                resultGeoname.responseResult(noDataResponse);
+                                break;
+                            case ENGINEER_LOCATION_URL:
+                                type = new TypeToken<LocationInfo>() {
+                                }.getType();
+                                LocationInfo locationInfo = gson.fromJson(response, type);
+                                resultGeoname.responseResult(locationInfo);
                                 break;
 
 

@@ -30,10 +30,10 @@
         <item name="android:textColor">#000</item>
     </style>
 
-    <!--<style name="customRatingBar" parent="@android:style/Widget.RatingBar">
+    <style name="customRatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:indeterminateDrawable">@drawable/review_rating_bar_full</item>
         <item name="android:progressDrawable">@drawable/review_rating_bar_full</item>
         <item name="@android:id/secondaryProgress">@drawable/half_star</item>
         <item name="android:isIndicator">false</item>
-    </style>-->
+    </style>
 </resources>

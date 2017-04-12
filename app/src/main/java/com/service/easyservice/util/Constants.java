@@ -28,6 +28,9 @@ public interface Constants {
     String REQUEST_SERVICE_LIST_URL = URL+"api-myrequest/";
     String SUPPORT_TICKET_URL = URL+"api-add-ticket/";
     String UPDATE_PROFILE_URL = URL+"api-profileupdate/";
+    String MY_REQUEST_FEEDBACK_URL = URL + "api-ratingfeedback/";
+    String ENGINEER_LOCATION_URL = URL + "api-get-engglocation/";
+
 
 
 
