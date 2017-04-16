@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
@@ -99,9 +100,16 @@ public class ServiceDropOffAddressActivity extends AppCompatActivity implements 
                         finish();
                     }
                 })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                .setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+
+                        //navigate to IssueDiagnosedActivity
+                        Intent intent = new Intent(ServiceDropOffAddressActivity.this,IssuesDiagnosedActivity.class);
+                        intent.putExtra("issues",issues);
+                        startActivity(intent);
+                        finish();
+
                     }
                 })
                 .show();

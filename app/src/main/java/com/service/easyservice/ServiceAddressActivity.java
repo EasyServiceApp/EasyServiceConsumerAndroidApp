@@ -110,9 +110,16 @@ public class ServiceAddressActivity extends AppCompatActivity implements View.On
                         finish();
                     }
                 })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                .setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+
+                        //navigate to IssueDiagnosedActivity
+                        Intent intent = new Intent(ServiceAddressActivity.this,IssuesDiagnosedActivity.class);
+                        intent.putExtra("issues",issues);
+                        startActivity(intent);
+                        finish();
+
                     }
                 })
                 .show();
