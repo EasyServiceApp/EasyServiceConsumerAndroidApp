@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.service.easyservice.models.Myappliance;
 import com.service.easyservice.util.AppPreferences;
+import com.service.easyservice.util.CommonFunctions;
 
 import java.lang.reflect.Type;
 
@@ -30,6 +31,7 @@ public class IssuesDiagnosedActivity extends AppCompatActivity implements View.O
     //no change
     ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
+    ImageView ivCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +100,8 @@ public class IssuesDiagnosedActivity extends AppCompatActivity implements View.O
 
         tvBrand.setText(device.getModel()+"\n"+device.getBrand());
 
+        ivCategory = (ImageView)findViewById(R.id.ivCategory);
+        CommonFunctions.setCategoryImage(ivCategory,device.getCategory());
 
         llIssueList = (LinearLayout)findViewById(R.id.llIssueList);
 

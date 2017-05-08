@@ -19,6 +19,7 @@ import com.sdk.sampleapp.LaunchActivity;
 import com.sdk.sampleapp.MainActivity;
 import com.service.easyservice.models.Myappliance;
 import com.service.easyservice.util.AppPreferences;
+import com.service.easyservice.util.CommonFunctions;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class DiagnoseActivity extends AppCompatActivity implements View.OnClickL
     String[] selectedIssueArray;
     ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
+    ImageView ivCategory;
 
 
     @Override
@@ -99,10 +101,16 @@ public class DiagnoseActivity extends AppCompatActivity implements View.OnClickL
         tvFooter = (TextView)findViewById(R.id.tvFooter);
         tvFooter.setOnClickListener(this);
 
+
+
         if(device!=null)
         {
             tvBrand.setText(device.getModel()+"\n"+device.getBrand());
+            ivCategory = (ImageView)findViewById(R.id.ivCategory);
+            CommonFunctions.setCategoryImage(ivCategory,device.getCategory());
         }
+
+
 
         llIssueList = (LinearLayout)findViewById(R.id.llIssueList);
 

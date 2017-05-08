@@ -847,7 +847,7 @@ Please Wait..."</string>
         <item>+971</item>
     </string-array>
 
-    <string-array name="issue_list">
+    <string-array name="issue_list_mobile">
         <item>Poor battery life</item>
         <item>Overheating</item>
         <item>Hangs frequently</item>
@@ -856,6 +856,44 @@ Please Wait..."</string>
         <item>Unable to click pictures</item>
         <item>Unable to connect to wifi</item>
         <item>Unable to play games</item>
+    </string-array>
+
+    <string-array name="issue_list_refrigerator">
+        <item>No Power</item>
+        <item>No Cooling</item>
+        <item>Less Cooling</item>
+        <item>Ice in R compartment ( milk turning ice)</item>
+        <item>Veg Getting spoilt</item>
+        <item>Noise from compressor side</item>
+        <item>Ice melting</item>
+        <item>Water Leakage</item>
+        <item>Water in R Compartment</item>
+        <item>Ref sides getting hot</item>
+    </string-array>
+
+    <string-array name="issue_list_ac">
+        <item>No Cooling</item>
+        <item>No Power</item>
+        <item>Less Cooling</item>
+        <item>Intermittent Cooling</item>
+        <item>Noise in Cooling mode</item>
+        <item>Noise in Fan mode</item>
+        <item>Water Leakage from AC</item>
+        <item>Remote not working</item>
+        <item>Indoor unit throwing water</item>
+        <item>Main power supply Trip</item>
+    </string-array>
+
+    <string-array name="issue_list_default">
+        <item>Not working</item>
+
+    </string-array>
+
+    <string-array name="drop_off_locations">
+        <item>Riyadh</item>
+        <item>Jeddah</item>
+        <item>Dammam</item>
+
     </string-array>
 
 </resources>

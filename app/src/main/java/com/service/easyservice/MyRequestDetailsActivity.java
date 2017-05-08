@@ -24,6 +24,7 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.service.easyservice.DiagnoseActivity.device;
 import static com.service.easyservice.util.Constants.MY_REQUEST_FEEDBACK_URL;
 
 public class MyRequestDetailsActivity extends AppCompatActivity implements View.OnClickListener,ResponseResult {
@@ -37,6 +38,7 @@ public class MyRequestDetailsActivity extends AppCompatActivity implements View.
     ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
     private float rating;
+    ImageView ivCategory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +94,10 @@ public class MyRequestDetailsActivity extends AppCompatActivity implements View.
         tvRequestId.setText("REQUEST No # "+myrequest.getRequestId());
         tvModel.setText("MODEL: "+ myrequest.getModel());
         tvBrand.setText(myrequest.getBrand()+"\n"+myrequest.getModel());
+
+        ivCategory = (ImageView)findViewById(R.id.ivCategory);
+        CommonFunctions.setCategoryImage(ivCategory,myrequest.getCategory());
+
         tvStatus.setText("Status:"+"\n"+myrequest.getStatusId());
         //display rating if available
         if("".equals(myrequest.getRatings()))

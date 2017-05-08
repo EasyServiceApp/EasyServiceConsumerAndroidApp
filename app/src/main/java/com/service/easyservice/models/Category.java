@@ -10,9 +10,12 @@ public class Category {
     @SerializedName("category_name")
     @Expose
     private String categoryName;
-    @SerializedName("brand")
+    @SerializedName("subcategory_display")
     @Expose
-    private List<Brand> brand = null;
+    private Boolean subcategoryDisplay;
+    @SerializedName("subcatgory")
+    @Expose
+    private List<Subcatgory> subcatgory = null;
 
     public String getCategoryName() {
         return categoryName;
@@ -22,12 +25,20 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public List<Brand> getBrand() {
-        return brand;
+    public Boolean getSubcategoryDisplay() {
+        return subcategoryDisplay;
     }
 
-    public void setBrand(List<Brand> brand) {
-        this.brand = brand;
+    public void setSubcategoryDisplay(Boolean subcategoryDisplay) {
+        this.subcategoryDisplay = subcategoryDisplay;
+    }
+
+    public List<Subcatgory> getSubcatgory() {
+        return subcatgory;
+    }
+
+    public void setSubcatgory(List<Subcatgory> subcatgory) {
+        this.subcatgory = subcatgory;
     }
 
 }

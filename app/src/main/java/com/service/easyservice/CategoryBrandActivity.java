@@ -23,18 +23,21 @@ import java.util.ArrayList;
 
 public class CategoryBrandActivity extends AppCompatActivity implements View.OnClickListener,Constants {
 
-    int CATEGORY = 1, BRAND = 2, MODEL = 3;
+    int CATEGORY = 1, SUBCATEGORY = 2, BRAND = 3, MODEL = 4;
     int Stage = CATEGORY;
     TextView tvLabel,tvFooter;
-    ListView lvCategory,lvBrand,lvModel;
+    ListView lvCategory,lvSubCategory,lvBrand,lvModel;
     BrandCategory brandCategory = null;
     ArrayList<String> categoryList = new ArrayList<>();
+    ArrayList<String> subCategoryList = new ArrayList<>();
     ArrayList<String> brandList = new ArrayList<>();
     ArrayList<String> modelList = new ArrayList<>();
     private ArrayAdapter<String> categoryAdapter;
+    private ArrayAdapter<String> subCategoryAdapter;
     private ArrayAdapter<String> brandAdapter;
     private ArrayAdapter<String> modelAdapter;
     int selectedCategory = 0;
+    int selectedSubCategory = 0;
     private Myappliance myappliance = new Myappliance();
     ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
@@ -61,6 +64,7 @@ public class CategoryBrandActivity extends AppCompatActivity implements View.OnC
         tvLabel = (TextView) findViewById(R.id.tvLabel);
         tvFooter = (TextView) findViewById(R.id.tvFooter);
         lvCategory = (ListView) findViewById(R.id.lvCategory);
+        lvSubCategory = (ListView) findViewById(R.id.lvSubCategory);
         lvBrand = (ListView) findViewById(R.id.lvBrand);
         lvModel = (ListView) findViewById(R.id.lvModel);
         tvFooter.setOnClickListener(this);
@@ -86,24 +90,79 @@ public class CategoryBrandActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //hide the category list and show the brand list
+
+                //check if the subcategory is to be displayed or not.
+
+                if(brandCategory.getCategory().get(i).getSubcategoryDisplay())
+                {
+                    //display subcategory list
+                    tvFooter.setText("<--Back");
+                    tvLabel.setText("Select Sub-Category");
+                    lvCategory.setVisibility(View.GONE);
+                    lvSubCategory.setVisibility(View.VISIBLE);
+                    Stage = SUBCATEGORY;
+                    selectedCategory = i;
+                    myappliance.setCategory(categoryList.get(i));
+                    for (int j=0;j<brandCategory.getCategory().get(i).getSubcatgory().size();j++)
+                    {
+
+                        subCategoryList.add(brandCategory.getCategory().get(i).getSubcatgory().get(j).getSubcategoryName().toUpperCase());
+                        //set list adapter for category
+                        subCategoryAdapter = new ArrayAdapter<String>(CategoryBrandActivity.this,
+                                android.R.layout.simple_list_item_1, subCategoryList);
+                        lvSubCategory.setAdapter(subCategoryAdapter);
+                        subCategoryAdapter.notifyDataSetChanged();
+                    }
+
+                }
+                else
+                {
+                    tvFooter.setText("<--Back");
+                    tvLabel.setText("Select Brand");
+                    lvCategory.setVisibility(View.GONE);
+                    lvBrand.setVisibility(View.VISIBLE);
+                    Stage = BRAND;
+                    selectedCategory = i;
+                    selectedSubCategory = 0;
+                    myappliance.setSubcategoryId(brandCategory.getCategory().get(i).getSubcatgory().get(0).getSubcategoryName());
+                    myappliance.setCategory(categoryList.get(i));
+                    for (int j=0;j<brandCategory.getCategory().get(i).getSubcatgory().get(0).getBrand().size();j++)
+                    {
+
+                        brandList.add(brandCategory.getCategory().get(i).getSubcatgory().get(0).getBrand().get(j).getBrandName());
+                        //set list adapter for category
+                        brandAdapter = new ArrayAdapter<String>(CategoryBrandActivity.this,
+                                android.R.layout.simple_list_item_1, brandList);
+                        lvBrand.setAdapter(brandAdapter);
+                        brandAdapter.notifyDataSetChanged();
+                    }
+
+                }
+
+
+            }
+        });
+
+        lvSubCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 tvFooter.setText("<--Back");
                 tvLabel.setText("Select Brand");
-                lvCategory.setVisibility(View.GONE);
+                lvSubCategory.setVisibility(View.GONE);
                 lvBrand.setVisibility(View.VISIBLE);
                 Stage = BRAND;
-                selectedCategory = i;
-                myappliance.setCategory(categoryList.get(i));
-                for (int j=0;j<brandCategory.getCategory().get(i).getBrand().size();j++)
+                selectedSubCategory = i;
+                myappliance.setSubcategoryId(brandCategory.getCategory().get(selectedCategory).getSubcatgory().get(i).getSubcategoryName());
+                for (int j=0;j<brandCategory.getCategory().get(selectedCategory).getSubcatgory().get(i).getBrand().size();j++)
                 {
 
-                    brandList.add(brandCategory.getCategory().get(i).getBrand().get(j).getBrandName());
+                    brandList.add(brandCategory.getCategory().get(selectedCategory).getSubcatgory().get(i).getBrand().get(j).getBrandName());
                     //set list adapter for category
                     brandAdapter = new ArrayAdapter<String>(CategoryBrandActivity.this,
                             android.R.layout.simple_list_item_1, brandList);
                     lvBrand.setAdapter(brandAdapter);
                     brandAdapter.notifyDataSetChanged();
                 }
-
             }
         });
 
@@ -117,9 +176,9 @@ public class CategoryBrandActivity extends AppCompatActivity implements View.OnC
                 lvModel.setVisibility(View.VISIBLE);
                 Stage = MODEL;
                 myappliance.setBrand(brandList.get(i));
-                for (int j=0;j<brandCategory.getCategory().get(selectedCategory).getBrand().get(i).getModel().size();j++)
+                for (int j=0;j<brandCategory.getCategory().get(selectedCategory).getSubcatgory().get(selectedSubCategory).getBrand().get(i).getModel().size();j++)
                 {
-                    modelList.add(brandCategory.getCategory().get(selectedCategory).getBrand().get(i).getModel().get(j).toUpperCase());
+                    modelList.add(brandCategory.getCategory().get(selectedCategory).getSubcatgory().get(selectedSubCategory).getBrand().get(i).getModel().get(j).toUpperCase());
                     //set list adapter for category
                     modelAdapter = new ArrayAdapter<String>(CategoryBrandActivity.this,
                             android.R.layout.simple_list_item_1, modelList);

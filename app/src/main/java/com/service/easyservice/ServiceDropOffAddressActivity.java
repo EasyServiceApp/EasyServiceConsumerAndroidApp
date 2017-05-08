@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -46,6 +47,8 @@ public class ServiceDropOffAddressActivity extends AppCompatActivity implements 
     Gson gson = new Gson();
     ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
+    ImageView ivCategory;
+    Spinner spinnerDropOff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +72,15 @@ public class ServiceDropOffAddressActivity extends AppCompatActivity implements 
         ivToolbarHome.setOnClickListener(this);
 
         etAddress = (EditText)findViewById(R.id.etAddress);
+        spinnerDropOff = (Spinner)findViewById(R.id.spinnerDropOff);
 
         tvFooter = (TextView) findViewById(R.id.tvFooter);
         tvFooter.setOnClickListener(this);
         tvBrand = (TextView) findViewById(R.id.tvBrand);
         //populate brand and category
         tvBrand.setText(device.getBrand()+"\n"+device.getModel());
+        ivCategory = (ImageView)findViewById(R.id.ivCategory);
+        CommonFunctions.setCategoryImage(ivCategory,device.getCategory());
         tvServiceMode = (TextView) findViewById(R.id.tvServiceMode);
         tvServiceMode.setText(serviceMode);
 
@@ -138,7 +144,7 @@ public class ServiceDropOffAddressActivity extends AppCompatActivity implements 
                     addIssueParameters.put("issue_category", "");   //will be added later
                     addIssueParameters.put("request_date", etRequestDate.getText().toString());
                     addIssueParameters.put("timeslot", "");
-                    addIssueParameters.put("location", etAddress.getText().toString()); //will be added ltr
+                    addIssueParameters.put("location", spinnerDropOff.getSelectedItem().toString()); //will be added ltr
                     addIssueParameters.put("user_appliance_id", device.getId());
                     addIssueParameters.put("category_id", device.getCategory());
                     addIssueParameters.put("subcategory_id", "0");

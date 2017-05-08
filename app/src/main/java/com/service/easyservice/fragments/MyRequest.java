@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -152,6 +153,7 @@ public class MyRequest extends Fragment implements ResponseResult, AdapterView.O
                 holder.tvModel = (TextView)rowView.findViewById(R.id.tvModel);
                 holder.tvBrand = (TextView)rowView.findViewById(R.id.tvBrand);
                 holder.tvBookingDate = (TextView)rowView.findViewById(R.id.tvBookingDate);
+                holder.ivCategory = (ImageView) rowView.findViewById(R.id.ivCategory);
 
                 rowView.setTag(holder);
             }
@@ -159,6 +161,7 @@ public class MyRequest extends Fragment implements ResponseResult, AdapterView.O
             holder.tvModel.setText(appointment.getModel());
             holder.tvBrand.setText(appointment.getBrand());
             holder.tvBookingDate.setText("Booking Date \n"+appointment.getRequestDate());
+            CommonFunctions.setCategoryImage(holder.ivCategory,appointment.getCategory());
 
             return rowView;
         }
@@ -167,6 +170,7 @@ public class MyRequest extends Fragment implements ResponseResult, AdapterView.O
         private class ViewHolder
         {
             TextView tvModel,tvBrand,tvBookingDate;
+            ImageView ivCategory;
         }
     }
 

@@ -105,7 +105,8 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/margin_30"
                     android:paddingStart="@dimen/margin_30"
-                    android:text="Please enter your mobile number to get your One Time Password(OTP)."
+                    android:paddingRight="@dimen/margin_30"
+                    android:text="Please enter your name, email and mobile number to get your One Time Password(OTP)."
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_20px" />
 
@@ -153,8 +154,9 @@
                     android:layout_marginTop="@dimen/margin_10"
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/margin_30"
+                    android:paddingRight="@dimen/margin_30"
                     android:paddingStart="@dimen/margin_20"
-                    android:text="Enter the One Time Password you have received in case we fail to detect the SMS automatically."
+                    android:text="Enter 1234 as your One Time Password."
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_20px" />
 
@@ -188,6 +190,7 @@
                     android:paddingStart="@dimen/margin_20"
                     android:text="In case you have not received the OTP, please tap below to regenerate the same."
                     android:textColor="@color/black"
+                    android:visibility="gone"
                     android:textSize="@dimen/text_20px" />
 
                 <com.service.easyservice.widgets.TextViewOpenSansRegular

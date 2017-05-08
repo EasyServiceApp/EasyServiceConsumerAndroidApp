@@ -32,6 +32,17 @@
         android:scrollbars="none"
         ></ListView>
     <ListView
+        android:id="@+id/lvSubCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_below="@+id/tvLabel"
+        android:layout_above="@+id/tvFooter"
+        android:scrollbars="none"
+        android:visibility="gone"
+        ></ListView>
+    <ListView
         android:id="@+id/lvBrand"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

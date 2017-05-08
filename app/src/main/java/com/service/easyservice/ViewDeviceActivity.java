@@ -31,7 +31,7 @@ import static com.service.easyservice.util.Constants.DELETE_DEVICE_URL;
 
 public class ViewDeviceActivity extends AppCompatActivity implements View.OnClickListener,ResponseResult {
 
-    TextView tvBrand,tvFooter,tvDelete;
+    TextView tvBrand,tvFooter,tvDelete,tvIMEI;
     EditText etName;
     EditText etWarranty;
     EditText etIMEI;
@@ -43,6 +43,7 @@ public class ViewDeviceActivity extends AppCompatActivity implements View.OnClic
     ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
     String myApplianceStr;
+    ImageView ivCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class ViewDeviceActivity extends AppCompatActivity implements View.OnClic
 
 
         tvBrand = (TextView)findViewById(R.id.tvBrand);
+        tvIMEI = (TextView)findViewById(R.id.tvIMEI);
         tvDelete = (TextView)findViewById(R.id.tvDelete);
         tvFooter = (TextView)findViewById(R.id.tvFooter);
         tvFooter.setOnClickListener(this);
@@ -119,8 +121,19 @@ public class ViewDeviceActivity extends AppCompatActivity implements View.OnClic
 
         //populate brand and category
         tvBrand.setText(myappliance.getBrand()+"\n"+myappliance.getModel());
+
+        ivCategory = (ImageView)findViewById(R.id.ivCategory);
+        CommonFunctions.setCategoryImage(ivCategory,myappliance.getCategory());
+
         etName.setText(myappliance.getModel());
         etIMEI.setText(myappliance.getSerialNo());
+
+        //if category is not mobile change label of serial no to serial no
+        if(!"mobile".equalsIgnoreCase(myappliance.getCategory()))
+        {
+            tvIMEI.setText("Serial No.");
+        }
+
         etWarranty.setText(myappliance.getWarranty());
         etPurchaseDate.setText(myappliance.getPurchaseDate());
 

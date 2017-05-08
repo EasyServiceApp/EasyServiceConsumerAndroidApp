@@ -22,6 +22,7 @@ import com.service.easyservice.volley.VolleyJSONCaller;
 import com.service.easyservice.widgets.FlowLayout;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,8 @@ public class MyDevicesActivity extends AppCompatActivity implements View.OnClick
     TextView tvFooter;
     ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
+    final Type type = new TypeToken<Myappliance>(){}.getType();
+    final Gson gson = new Gson();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,44 +95,82 @@ public class MyDevicesActivity extends AppCompatActivity implements View.OnClick
         //clear all the views
         llDevices.removeAllViews();
 
+        //hide delete button for the self device
+        List<Myappliance> devicesStored = new AppPreferences(this).getDevices();
+        Myappliance device1 = devicesStored.get(0);
+
         //get devices from app preference
-
-
-        //populate the category layout
-
-        View category = inflater.inflate(R.layout.category_header_my_device,null,false);
-        TextView tvCategory = (TextView)category.findViewById(R.id.tvCategory);
-        tvCategory.setText("MOBILE");
-        llDevices.addView(category);
-
-        FlowLayout flowLayout = new FlowLayout(this);
-
-        for (int i=0;i<devices.size();i++)
+        List<Myappliance> devicesTemp = new ArrayList<>();
+        List<String> categoryList = new ArrayList<>();
+        Myappliance myDevice = null;
+        for(int i=0; i<devices.size();i++)
         {
             Myappliance device = devices.get(i);
-            View device_view = inflater.inflate(R.layout.my_device,null,false);
-            TextView tvModel = (TextView)device_view.findViewById(R.id.tvModel);
-            TextView tvBrand = (TextView)device_view.findViewById(R.id.tvBrand);
-            TextView tvName = (TextView)device_view.findViewById(R.id.tvName);
 
-            tvModel.setText(device.getModel());
-            tvBrand.setText(device.getBrand());
-            //hide delete button for the self device
-            List<Myappliance> devicesStored = new AppPreferences(this).getDevices();
-            Myappliance device1 = devicesStored.get(0);
+            if(!categoryList.contains(device.getCategory()))
+            {
+                categoryList.add(device.getCategory());
+            }
 
             if(device1.getSerialNo().equals(device.getSerialNo()))
             {
-                tvName.setText("My Device");
+                myDevice = device;
+                devices.remove(i);
             }
-            else
+
+
+        }
+
+        //add all device to temp list
+        if(myDevice!=null)
+        {
+            devicesTemp.add(myDevice);
+        }
+        devicesTemp.addAll(devices);
+        //populate the category layout
+
+        //rearrange the devices
+
+        List<View> categoryView = new ArrayList<>();
+        List<FlowLayout> flowLayouts  = new ArrayList<>();
+
+        for(int k = 0; k<categoryList.size();k++)
+        {
+            View category = inflater.inflate(R.layout.category_header_my_device,null,false);
+            TextView tvCategory = (TextView)category.findViewById(R.id.tvCategory);
+            tvCategory.setText(categoryList.get(k));
+            categoryView.add(category);
+            flowLayouts.add(new FlowLayout(this));
+        }
+
+
+
+            for (int i=0;i<devicesTemp.size();i++)
             {
-                tvName.setVisibility(View.GONE);
-            }
-            //store devices
-            final Type type = new TypeToken<Myappliance>(){}.getType();
-            final Gson gson = new Gson();
-            device_view.setTag(gson.toJson(device,type));
+                Myappliance device = devicesTemp.get(i);
+                View device_view = inflater.inflate(R.layout.my_device,null,false);
+                TextView tvModel = (TextView)device_view.findViewById(R.id.tvModel);
+                TextView tvBrand = (TextView)device_view.findViewById(R.id.tvBrand);
+                TextView tvName = (TextView)device_view.findViewById(R.id.tvName);
+                ImageView ivCategory = (ImageView)device_view.findViewById(R.id.ivCategory);
+                CommonFunctions.setCategoryImage(ivCategory,device.getCategory());
+                tvModel.setText(device.getModel());
+                tvBrand.setText(device.getBrand());
+
+
+
+                if(device1.getSerialNo().equals(device.getSerialNo()))
+                {
+                    tvName.setText("My Device");
+                }
+                else
+                {
+                    tvName.setVisibility(View.GONE);
+                }
+
+
+
+                device_view.setTag(gson.toJson(device,type));
             device_view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -144,9 +185,21 @@ public class MyDevicesActivity extends AppCompatActivity implements View.OnClick
                 }
             });
 
-            flowLayout.addView(device_view);
+                //check device belongs to which category
+                for(int k = 0; k<categoryList.size();k++)
+                {
+                    if(categoryList.get(k).equalsIgnoreCase(device.getCategory()))
+                    {
+                        flowLayouts.get(k).addView(device_view);
+                    }
+                }
         }
-        llDevices.addView(flowLayout);
+            for(int k = 0; k<categoryList.size();k++)
+            {
+
+                llDevices.addView(categoryView.get(k));
+                llDevices.addView(flowLayouts.get(k));
+            }
 
     }
 

@@ -226,4 +226,42 @@ import java.util.regex.Pattern;
         context.startActivity(intent);
         ((Activity)context).finish();
     }
+
+    public static void setCategoryImage(ImageView imageView, String category)
+    {
+        switch (category.toLowerCase())
+        {
+            case "mobile":
+                imageView.setImageResource(R.drawable.ic_my_devices_mobile);
+                break;
+            case "refrigerators":
+                imageView.setImageResource(R.drawable.ic_my_devices_refrigerator);
+                break;
+            case "air conditioners":
+                imageView.setImageResource(R.drawable.ic_my_devices_ac);
+                break;
+            default:
+                imageView.setImageResource(R.drawable.ic_my_devices_mobile);
+        }
+    }
+
+    public static String[] getIssueList(Context context,String category)
+    {
+        switch (category.toLowerCase())
+        {
+            case "mobile":
+                return context.getResources().getStringArray(R.array.issue_list_mobile);
+
+            case "refrigerators":
+                return context.getResources().getStringArray(R.array.issue_list_refrigerator);
+
+            case "air conditioners":
+                return context.getResources().getStringArray(R.array.issue_list_ac);
+
+            default:
+                return context.getResources().getStringArray(R.array.issue_list_default);
+        }
+    }
+
+
 }

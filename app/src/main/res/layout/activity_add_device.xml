@@ -80,32 +80,31 @@
                     android:layout_gravity="bottom">
 
                     <com.service.easyservice.widgets.TextViewOpenSansSemiBold
-                        android:id="@+id/tvName"
+                        android:id="@+id/tvModel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
                         android:ems="8"
-                        android:text="Device Name"
+                        android:text="Model"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_12px"
-                        android:visibility="gone" />
+                         />
 
                     <EditText
-                        android:id="@+id/etName"
+                        android:id="@+id/etModel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_10"
                         android:layout_marginRight="@dimen/margin_10"
-                        android:layout_toRightOf="@+id/tvName"
+                        android:layout_toRightOf="@+id/tvModel"
                         android:background="@drawable/horizontal_selector_black"
                         android:inputType="textPersonName"
                         android:padding="@dimen/margin_5"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_12px"
-
-                        android:visibility="gone" />
+                         />
 
 
                 </RelativeLayout>

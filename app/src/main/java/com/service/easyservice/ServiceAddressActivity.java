@@ -56,6 +56,7 @@ public class ServiceAddressActivity extends AppCompatActivity implements View.On
     Gson gson = new Gson();
     ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
     private Toolbar toolbar;
+    ImageView ivCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +84,9 @@ public class ServiceAddressActivity extends AppCompatActivity implements View.On
         tvBrand = (TextView) findViewById(R.id.tvBrand);
         //populate brand and category
         tvBrand.setText(device.getBrand()+"\n"+device.getModel());
+        ivCategory = (ImageView)findViewById(R.id.ivCategory);
+        CommonFunctions.setCategoryImage(ivCategory,device.getCategory());
+
         tvServiceMode = (TextView) findViewById(R.id.tvServiceMode);
         tvServiceMode.setText(serviceMode);
         spinnerLocation = (Spinner) findViewById(R.id.spinnerLocation);

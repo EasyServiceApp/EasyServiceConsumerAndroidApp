@@ -52,8 +52,9 @@ import java.util.Map;
 
 public class AddDeviceActivity extends AppCompatActivity implements View.OnClickListener,Constants,Response.Listener<String>,Response.ErrorListener {
 
-    TextView tvBrand,tvFooter;
-    EditText etName;
+    TextView tvBrand,tvFooter,tvModel,tvIMEI;
+    ImageView ivCategory;
+    EditText etModel;
     EditText etIMEI;
     RadioGroup rgWarranty;
     static EditText etPurchaseDate;
@@ -93,10 +94,14 @@ public class AddDeviceActivity extends AppCompatActivity implements View.OnClick
         ivToolbarHome = (ImageView)toolbar.findViewById(R.id.ivToolbarHome);
         ivToolbarHome.setOnClickListener(this);
 
+        ivCategory = (ImageView)findViewById(R.id.ivCategory);
+
         tvBrand = (TextView)findViewById(R.id.tvBrand);
         tvFooter = (TextView)findViewById(R.id.tvFooter);
+        tvModel = (TextView)findViewById(R.id.tvModel);
+        tvIMEI = (TextView)findViewById(R.id.tvIMEI);
         tvFooter.setOnClickListener(this);
-        etName = (EditText) findViewById(R.id.etName);
+        etModel = (EditText) findViewById(R.id.etModel);
         etIMEI = (EditText) findViewById(R.id.etIMEI);
         rgWarranty = (RadioGroup) findViewById(R.id.rgWarranty);
         etPurchaseDate = (EditText) findViewById(R.id.etPurchaseDate);
@@ -116,7 +121,30 @@ public class AddDeviceActivity extends AppCompatActivity implements View.OnClick
         loading = new ProgressDialog(this);
 
         //populate brand and category
-        tvBrand.setText(myappliance.getBrand()+"\n"+myappliance.getModel());
+
+        //if model is others then display model input
+
+        if("others".equalsIgnoreCase(myappliance.getModel()))
+        {
+            tvBrand.setText(myappliance.getBrand());
+
+        }
+        else
+        {
+            tvBrand.setText(myappliance.getBrand()+"\n"+myappliance.getModel());
+            tvModel.setVisibility(View.GONE);
+            etModel.setVisibility(View.GONE);
+            etModel.setText(myappliance.getModel());
+        }
+
+        //set category image
+        CommonFunctions.setCategoryImage(ivCategory,myappliance.getCategory());
+
+        //if category is not mobile change label of serial no to serial no
+        if(!"mobile".equalsIgnoreCase(myappliance.getCategory()))
+        {
+            tvIMEI.setText("Serial No.");
+        }
 
     }
 
@@ -200,10 +228,10 @@ public class AddDeviceActivity extends AppCompatActivity implements View.OnClick
                 Map<String, String> addApplianceParameters = new HashMap<>();
                 addApplianceParameters.put("appapi", "yes");
                 addApplianceParameters.put("category_id", myappliance.getCategory());
-                addApplianceParameters.put("subcategory_id", "");
+                addApplianceParameters.put("subcategory_id", myappliance.getSubcategoryId());
                 addApplianceParameters.put("brand_id", myappliance.getBrand());
                 addApplianceParameters.put("store_id", "36");
-                addApplianceParameters.put("model_id", myappliance.getModel());
+                addApplianceParameters.put("model_id", etModel.getText().toString());
                 addApplianceParameters.put("serial_no", etIMEI.getText().toString().trim());
                 addApplianceParameters.put("warranty", ((RadioButton)findViewById(rgWarranty.getCheckedRadioButtonId())).getText().toString());
                 addApplianceParameters.put("purchase_date", etPurchaseDate.getText().toString().trim());

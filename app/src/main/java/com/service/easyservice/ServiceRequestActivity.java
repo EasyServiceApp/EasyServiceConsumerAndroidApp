@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.service.easyservice.models.Myappliance;
 import com.service.easyservice.util.AppPreferences;
+import com.service.easyservice.util.CommonFunctions;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class ServiceRequestActivity extends AppCompatActivity implements View.On
     ArrayList<String> selectedIssue = new ArrayList<>();
     private Toolbar toolbar;
     ImageView ivProfile,ivDrawerHandel,ivToolbarHome;
+    ImageView ivCategory;
 
 
     @Override
@@ -93,10 +95,12 @@ public class ServiceRequestActivity extends AppCompatActivity implements View.On
         if(device!=null)
         {
             tvBrand.setText(device.getModel()+"\n"+device.getBrand());
+            ivCategory = (ImageView)findViewById(R.id.ivCategory);
+            CommonFunctions.setCategoryImage(ivCategory,device.getCategory());
         }
 
         //populate issue list
-        String[] issueList = getResources().getStringArray(R.array.issue_list);
+        String[] issueList = CommonFunctions.getIssueList(this,device.getCategory()) ;
 
         for(int i=0; i<issueList.length;i++)
         {
